@@ -11,7 +11,7 @@ appartment_list = []
 
 
 def get_class(html_text):
-    tree = lxml.html.document_fromstring(html_text)
+    tree = lxml.html.fromstring(html_text)
     tbody_table = tree.xpath('//table')[4]
 
     row_list = []
@@ -28,21 +28,32 @@ def get_class(html_text):
     row_list = row_list[1:31]
 
     for row in row_list:
-        details = {
-            "address": row[0],
-            "rooms": row[1],
-            "area": row[2],
-            "floor": row[3],
-            "building_type": row[4],
-            "rent/month": row[5].split(' ')[0].replace(',', ''),
-            "price": row[6].split(' ')[0].replace(',', ''),
-        }
+        try:
+            details = {
+                "address": row[0].replace(',', ' '),
+                "rooms": row[1],
+                "area": row[2],
+                "floor": row[3],
+                "building_type": row[4].replace(',', ' '),
+                "rent/month": row[5].split(' ')[0].replace(',', ''),
+                "price": row[6].split(' ')[0].replace(',', ''),
+            }
+        except:
+            details = {
+                "address": "",
+                "rooms": "",
+                "area": "",
+                "floor": "",
+                "building_type": "",
+                "rent/month": "",
+                "price": "",
+            }
         appartment_list.append(details)
 
 
 def write_csv(appartment_list):
     # write csv wit headers
-    with open('center_appartment_list.csv', 'w') as csv_file:
+    with open('ilguciems_appartment_list.csv', 'w') as csv_file:
         csv_file.write(
             'address,rooms,area,floor,building_type,rent/month,price\n')
         for appartment in appartment_list:
@@ -51,7 +62,7 @@ def write_csv(appartment_list):
 
 
 def main():
-    base_url = "https://www.ss.lv/lv/real-estate/flats/riga/centre/sell/"
+    base_url = "https://www.ss.lv/lv/real-estate/flats/riga/ilguciems/sell/"
     html_text = requests.get(base_url, headers=headers).text
     get_class(html_text)
     write_csv(appartment_list)
