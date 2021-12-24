@@ -1,31 +1,31 @@
-address,rooms,area,floor,building_type,rent/month,price
-Dammes 31,3,62,4/9,602.,1371,85000
-,,,,,,
-Dammes 27,3,61,9/9,602.,1033,63000
-Progresa 3,3,99,1/6,Jaun.,1606,159000
-Slokas 195,2,39,1/5,LT proj.,1769,69000
-Kurzemes pr. 42,3,66,2/5,LT proj.,1091,72000
-Kurzemes pr. 152,2,51,9/9,602.,940,47950
-Rigondas g. 10,2,50,6/9,602.,1100,55000
-Jūrmalas g. 99,3,62,8/9,602.,1210,75000
-Kleistu 11 k1,2,54,3/16,Jaun.,1852,100000
-,,,,,,
-Anniņmuižas 82,4,75,8/9,467.,1280,96000
-Dammes 31,3,62,4/9,602.,1371,85000
-Anniņmuižas 46,2,48,9/9,602.,1052,50500
-Kurzemes pr. 48,2,50,4/5,LT proj.,1000,49995
-,,,,,,
-Slokas 167,2,38,1/5,LT proj.,1053,40000
-Jūrmalas g. 101,3,63,1/9,602.,952,60000
-Kurzemes pr. 106,2,50,9/9,602.,960,48000
-,,,,,,
-Kurzemes pr. 32,2,50,5/5,LT proj.,940,47000
-,,,,,,
-Tālavas g. 3,3,72,5/5,LT proj.,958,69000
-Dammes 15,3,61,2/9,602.,1139,69500
-,,,,,,
-,,,,,,
-Dammes 8,3,68,6/9,602.,956,65000
-Anniņmuižas 43,2,97,1/24,Jaun.,1649,160000
-Anniņmuižas 50,2,49,4/9,602.,1337,65500
-Anniņmuižas 38,2,90,8/18,Jaun.,1567,141000
+description,address,rooms,area(kvm.),floor,building_type,rent/month,price
+Pārdod izremontētu trīsistabu dzīvokli 602 sērijas mājā Imantā. ,Dammes 31,3,62,4/9,602.,1371,85000
+Tiek pārdots 3-istabu dzīvoklis ar visām ērtībām Imantā Annuņmui,Anniņmuižas 30,3,76,8/12,Specpr.,1395,106000
+Pārdod trīsistabu dzīvokli 602 sērijas mājā Imantā. Pie mājas ir,Dammes 27,3,61,9/9,602.,1033,63000
+Elegants gaišs un plašs 3-istabu dzīvoklis jauna projekta ēkā. ,Progresa 3,3,99,1/6,Jaun.,1606,159000
+Современная компактная и в тоже время комфортная квартира.  ,Slokas 195,2,39,1/5,LT proj.,1769,69000
+Просторная и уютная трехкомнатная квартира. Окна выходят на обе ,Kurzemes pr. 42,3,66,2/5,LT proj.,1091,72000
+Pārdodu labu gaišu dzīvokli klusā vietā ar skaistu skatu. Ļoti ,Kurzemes pr. 152,2,51,9/9,602.,940,47950
+Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Rigondas g. 10,2,50,6/9,602.,1100,55000
+Предлагаем квартиру в красивом зеленом микрорайоне. Квартира н,Jūrmalas g. 99,3,62,8/9,602.,1210,75000
+Kvalitatīvs 2007. gada jaunais projekts Imantas Pērle saulains ,Kleistu 11 k1,2,54,3/16,Jaun.,1852,100000
+Продается 2-х комнатная увартира в самом лучшем месте в Иманте. ,Anniņmuižas 52,2,52,4/9,602.,1017,52900
+Продаётся 4-х комнатная квартира 467 серии. 3 изолированные комн,Anniņmuižas 82,4,75,8/9,467.,1280,96000
+Lielisks 3-istabu dzīvoklis Imantā pilnībā iekārtots dzīvošanai,Dammes 31,3,62,4/9,602.,1371,85000
+Silts saulains kluss divistabu dzīvoklis pašā augstākajā no mā,Anniņmuižas 46,2,48,9/9,602.,1052,50500
+Продаю квартиру без ремонта. Окна выходят на обе стороны в квар,Kurzemes pr. 48,2,50,4/5,LT proj.,1000,49995
+Редкий проект 2х-комнатной квартиры Иманта 5.Комнаты изолиров,Kurzemes pr. 142,2,53,2/9,602.,1623,86000
+Istabas izolētas. Dzīvoklis nav stūra pilnība atbrīvotsSl,Slokas 167,2,38,1/5,LT proj.,1053,40000
+Tiek pārdots 3 istabu dzīvoklis nav stūra sauss 2 izolētas is,Jūrmalas g. 101,3,63,1/9,602.,952,60000
+Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Kurzemes pr. 106,2,50,9/9,602.,960,48000
+Тёплая 2-комнатная квартира в лучшем месте Иманты: в шаговой дос,Dammes 30,2,39,1/5,LT proj.,1462,57000
+Pārdodu divistabu dzīvokli bez remonta kooperatīvā  Imanta . R,Kurzemes pr. 32,2,50,5/5,LT proj.,940,47000
+Tiek pārdots 3 istabu dzīvoklis Imantā. Dzīvoklis nav stūra 2,Dammes 27,3,61,9/9,602.,1033,63000
+Pārdod 3 istabu dzīvokli Imantā. Pārdod īpašnieks. Dzīvoklis ir ,Tālavas g. 3,3,72,5/5,LT proj.,958,69000
+Īpašnieks pārdod 3 istabu dzīvokli Imantā. Dzīvokļa plānojums - ,Dammes 15,3,61,2/9,602.,1139,69500
+Pārdod īpašnieks. Starpniekus lūdzu netraucēt. Dzīvoklis labā st,Kurzemes pr. 68,2,49,1/5,LT proj.,994,48700
+Продается отличная 3-комнатная квартира с ремонтом полностью обо,Slokas 173,3,67,2/5,LT proj.,1142,76500
+Pārdod 3 istabu dzīvokli privatizētu ar visām ērtībām Imantā ,Dammes 8,3,68,6/9,602.,956,65000
+Divu istabu dzīvoklis ar 269m2 lielu privātu terasi.  Dzīvokl,Anniņmuižas 43,2,97,1/24,Jaun.,1649,160000
+Продаётся квартира с отличным расположением в Иманте с землёй в,Anniņmuižas 50,2,49,4/9,602.,1337,65500
+Проект Метрополия - продается 3х-комнатная квартира перепланиро,Anniņmuižas 38,2,90,8/18,Jaun.,1567,141000

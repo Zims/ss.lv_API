@@ -1,31 +1,31 @@
-address,rooms,area,floor,building_type,rent/month,price
-Dzirciema 31,4,161,3/3,Jaun.,1522,245000
-Spilves 37B,2,49,1/5,LT proj.,878,43000
-Stūres 1A,3,76,2/3,Staļina,895,68000
-Spilves 33,2,39,4/5,LT proj.,1205,47000
-Buļļu 31,3,55,5/5,LT proj.,1142,62800
-Dzirciema 74,2,43,1/5,Hrušč.,953,41000
-,,,,,,
-Daugavgrīvas 132/1,2,51,2/4,Staļina,1314,67000
-Lidoņu 23,3,68,5/5,LT proj.,1265,86000
-,,,,,,
-Lidoņu 23,2,49,3/5,LT proj.,1347,66000
-Dzirciema 52 k2,3,93,1/5,103.,1344,125000
-Buļļu 42A,2,44,8/9,119.,1180,51900
-Grīvas 4,2,59,1/5,Specpr.,725,42780
-Grīvas 4,3,72,1/5,Specpr.,693,49870
-Saulgožu 21,1,30,5/5,Hrušč.,1077,32300
-Saulgožu 13,2,41,4/5,Hrušč.,1012,41500
-Baltā 22 k-1,2,50,3/5,103.,974,48700
-Saulgožu 19,3,53,4/5,Hrušč.,940,49800
-,,,,,,
-Vaidelotes 22,1,29,3/5,Hrušč.,1121,32500
-Cementa 20,2,49,1/5,LT proj.,816,40000
-Lidoņu 3a,3,54,5/5,LT proj.,833,45000
-Baltā 12,1,29,2/2,P. kara,466,13500
-Dagmāras 14,2,42,2/5,Hrušč.,940,39500
-Cementa 20,2,49,1/5,LT proj.,816,40000
-Motoru 3,1,25,5/5,M. ģim.,940,23500
-,,,,,,
-Šauļu 6,2,42,1/3,Hrušč.,940,39500
-Palangas 8,3,66,1/5,LT proj.,727,48000
+description,address,rooms,area(kvm.),floor,building_type,rent/month,price
+Уникальное предложение от застройщика - Продаются Современные Ло,Dzirciema 31,4,161,3/3,Jaun.,1522,245000
+Pārdošanā 2-istabu dzīvoklis ar lodžiju. Tas sastāv no divām izo,Spilves 37B,2,49,1/5,LT proj.,878,43000
+Продается солнечная квартира с высокими потолками 3 изолированн,Stūres 1A,3,76,2/3,Staļina,895,68000
+Silts mājīgs dzīvoklis. Tuvumā ir veikali tirgus sabiedrisk,Spilves 33,2,39,4/5,LT proj.,1205,47000
+Pārdodam 3 istabu dzīvokli ar remontu Iļģuciemā. Labs plānojum,Buļļu 31,3,55,5/5,LT proj.,1142,62800
+Pārdod gaišu siltu divistabu dzīvokli ar visām ērtībām. Istabas,Dzirciema 74,2,43,1/5,Hrušč.,953,41000
+Īpašnieks pārdod 2-istabu dzīvokli ar balkonu. Nav stūra silts,Vaidelotes 23,2,42,1/5,Hrušč.,1040,43700
+Продаём освобождённую 2- комнатную квартиру. Площадь 51 4 m2.,Daugavgrīvas 132/1,2,51,2/4,Staļina,1314,67000
+Dzīvoklis pilnībā izremontēts pirms 5 gadiem – saskaņota pārbūve,Lidoņu 23,3,68,5/5,LT proj.,1265,86000
+Īpašnieks pārdod 2-ist. dzīvokli ar visām ērtībām kapitālā ķieğe,Vaidelotes 13,2,43,2/5,Hrušč.,860,37000
+Продаёт владелец полностью готовую к проживанию квартиру Карт,Lidoņu 23,2,49,3/5,LT proj.,1347,66000
+Pārdodu dzīvokli kurš drīzumā tiks kapitāli pabeigts. Dzīvoklī ,Dzirciema 52 k2,3,93,1/5,103.,1344,125000
+Rets 119. sērijas plānojums ar palielinātu virtuvi un iespēju pā,Buļļu 42A,2,44,8/9,119.,1180,51900
+Mājas daļa-atsevišķa ieeja. Ir iespēja izvēlēties no diviem dzī,Grīvas 4,2,59,1/5,Specpr.,725,42780
+Mājas daļa-atsevišķa ieeja. Ir iespēja izvēlēties no diviem dzī,Grīvas 4,3,72,1/5,Specpr.,693,49870
+Pārdodam vienas istabas Dzīvokli. Laba atrašanās Vieta.  Māja ,Saulgožu 21,1,30,5/5,Hrušč.,1077,32300
+Pārdošanā dzīvoklis netālu no Nordeķu parka. Tas sastāv no divām,Saulgožu 13,2,41,4/5,Hrušč.,1012,41500
+Pārdošanā 2-istabu dzīvoklis ar lodžiju. Tas sastāv no divām izo,Baltā 22 k-1,2,50,3/5,103.,974,48700
+Tiek pārdots 3 istabu dzīvoklis. Bez parādiem un apgrūtinājumiem,Saulgožu 19,3,53,4/5,Hrušč.,940,49800
+Pārdodu 3-istabu dzīvokli. Daļējs remonts - - stikla pak,Riekstu 16,3,54,1/5,LT proj.,1222,66000
+Pārdod vienistabas dzīvokli Iļguciemā. Dzīvoklī ir nepieciešams ,Vaidelotes 22,1,29,3/5,Hrušč.,1121,32500
+Pārdod divu izolētu istabu dzīvokli Iļģuciema rajonā. Dzīvokli,Cementa 20,2,49,1/5,LT proj.,816,40000
+Iļģuciemā pie Daugavgrīvas ielas atrodas piecstāvu ēka kur Tev ,Lidoņu 3a,3,54,5/5,LT proj.,833,45000
+Īpašnieks pārdod plašu vienistabas dzīvokli ar daļējām ērtībām ,Baltā 12,1,29,2/2,P. kara,466,13500
+Pārdod divu istabu dzīvokli ķieģeļu mājā Iļģuciema rajonā. Dzī,Dagmāras 14,2,42,2/5,Hrušč.,940,39500
+Pārdošanā plašs divu istabu dzīvoklis Iļģuciema ar plašu iestikl,Cementa 20,2,49,1/5,LT proj.,816,40000
+Уютная квартирка студийного типа. Без долгов и обременений. ,Motoru 3,1,25,5/5,M. ģim.,940,23500
+Двухкомнатная квартира с лоджией. Комфортная планировка с двумя ,Cementa 20,2,49,1/5,LT proj.,816,40000
+Pārdodas dzīvoklis vidējā stāvoklī. Silts gaišs. Pvc logi metā,Šauļu 6,2,42,1/3,Hrušč.,940,39500
+Pārdodu 3 istabu dzīvokli Iļģuciemā Palangas ielā 8. Dzīvoklis ,Palangas 8,3,66,1/5,LT proj.,727,48000

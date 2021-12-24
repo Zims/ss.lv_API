@@ -7,8 +7,6 @@ import time
 headers = {
     'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
 
-region_list = ["centre","agenskalns","yugla","imanta","ilguciems"]
-
 appartment_list = []
 
 
@@ -52,33 +50,29 @@ def get_class(html_text):
                 "area": row[5][0],
                 "floor": row[6][0],
                 "building_type": row[7][0],
-                "rent/month": row[8][0].replace(',', ''),
-                "price": row[9][0].replace(',', ''),
+                "rent/month": row[8][0],
+                "price": row[9][0],
             }
         
         appartment_list.append(details)
         print(details)
 
 
-def write_csv(appartment_list, region):
+def write_csv(appartment_list):
     # write csv wit headers
-    with open(f'{region}_appartment_list.csv', 'w') as csv_file:
+    with open('appartment_list.csv', 'w') as csv_file:
         csv_file.write(
             'description,address,rooms,area(kvm.),floor,building_type,rent/month,price\n')
         for appartment in appartment_list:
             csv_file.write(
                 f'{appartment["description"]},{appartment["address"]},{appartment["rooms"]},{appartment["area"]},{appartment["floor"]},{appartment["building_type"]},{appartment["rent/month"]},{appartment["price"]}\n')
-        appartment_list.clear()
 
 
 def main():
-    for region in region_list:
-        base_url = f"https://www.ss.lv/lv/real-estate/flats/riga/{region}/sell/"
-        html_text = requests.get(base_url, headers=headers).text
-        get_class(html_text)
-        write_csv(appartment_list, region)
-        time.sleep(1)
-
+    base_url = "https://www.ss.lv/lv/real-estate/flats/riga/ilguciems/sell/"
+    html_text = requests.get(base_url, headers=headers).text
+    get_class(html_text)
+    write_csv(appartment_list)
 
 
 if __name__ == '__main__':
