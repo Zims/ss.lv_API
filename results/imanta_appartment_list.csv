@@ -1,31 +1,31 @@
-description,address,rooms,area(kvm.),floor,building_type,rent/month,price
-Pārdod izremontētu trīsistabu dzīvokli 602 sērijas mājā Imantā. ,Dammes 31,3,62,4/9,602.,1371,85000
-Tiek pārdots 3-istabu dzīvoklis ar visām ērtībām Imantā Annuņmui,Anniņmuižas 30,3,76,8/12,Specpr.,1395,106000
-Pārdod trīsistabu dzīvokli 602 sērijas mājā Imantā. Pie mājas ir,Dammes 27,3,61,9/9,602.,1033,63000
-Elegants gaišs un plašs 3-istabu dzīvoklis jauna projekta ēkā. ,Progresa 3,3,99,1/6,Jaun.,1606,159000
-Современная компактная и в тоже время комфортная квартира.  ,Slokas 195,2,39,1/5,LT proj.,1769,69000
-Просторная и уютная трехкомнатная квартира. Окна выходят на обе ,Kurzemes pr. 42,3,66,2/5,LT proj.,1091,72000
-Pārdodu labu gaišu dzīvokli klusā vietā ar skaistu skatu. Ļoti ,Kurzemes pr. 152,2,51,9/9,602.,940,47950
-Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Rigondas g. 10,2,50,6/9,602.,1100,55000
-Предлагаем квартиру в красивом зеленом микрорайоне. Квартира н,Jūrmalas g. 99,3,62,8/9,602.,1210,75000
-Kvalitatīvs 2007. gada jaunais projekts Imantas Pērle saulains ,Kleistu 11 k1,2,54,3/16,Jaun.,1852,100000
-Продается 2-х комнатная увартира в самом лучшем месте в Иманте. ,Anniņmuižas 52,2,52,4/9,602.,1017,52900
-Продаётся 4-х комнатная квартира 467 серии. 3 изолированные комн,Anniņmuižas 82,4,75,8/9,467.,1280,96000
-Lielisks 3-istabu dzīvoklis Imantā pilnībā iekārtots dzīvošanai,Dammes 31,3,62,4/9,602.,1371,85000
-Silts saulains kluss divistabu dzīvoklis pašā augstākajā no mā,Anniņmuižas 46,2,48,9/9,602.,1052,50500
-Продаю квартиру без ремонта. Окна выходят на обе стороны в квар,Kurzemes pr. 48,2,50,4/5,LT proj.,1000,49995
-Редкий проект 2х-комнатной квартиры Иманта 5.Комнаты изолиров,Kurzemes pr. 142,2,53,2/9,602.,1623,86000
-Istabas izolētas. Dzīvoklis nav stūra pilnība atbrīvotsSl,Slokas 167,2,38,1/5,LT proj.,1053,40000
-Tiek pārdots 3 istabu dzīvoklis nav stūra sauss 2 izolētas is,Jūrmalas g. 101,3,63,1/9,602.,952,60000
-Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Kurzemes pr. 106,2,50,9/9,602.,960,48000
-Тёплая 2-комнатная квартира в лучшем месте Иманты: в шаговой дос,Dammes 30,2,39,1/5,LT proj.,1462,57000
-Pārdodu divistabu dzīvokli bez remonta kooperatīvā  Imanta . R,Kurzemes pr. 32,2,50,5/5,LT proj.,940,47000
-Tiek pārdots 3 istabu dzīvoklis Imantā. Dzīvoklis nav stūra 2,Dammes 27,3,61,9/9,602.,1033,63000
-Pārdod 3 istabu dzīvokli Imantā. Pārdod īpašnieks. Dzīvoklis ir ,Tālavas g. 3,3,72,5/5,LT proj.,958,69000
-Īpašnieks pārdod 3 istabu dzīvokli Imantā. Dzīvokļa plānojums - ,Dammes 15,3,61,2/9,602.,1139,69500
-Pārdod īpašnieks. Starpniekus lūdzu netraucēt. Dzīvoklis labā st,Kurzemes pr. 68,2,49,1/5,LT proj.,994,48700
-Продается отличная 3-комнатная квартира с ремонтом полностью обо,Slokas 173,3,67,2/5,LT proj.,1142,76500
-Pārdod 3 istabu dzīvokli privatizētu ar visām ērtībām Imantā ,Dammes 8,3,68,6/9,602.,956,65000
-Divu istabu dzīvoklis ar 269m2 lielu privātu terasi.  Dzīvokl,Anniņmuižas 43,2,97,1/24,Jaun.,1649,160000
-Продаётся квартира с отличным расположением в Иманте с землёй в,Anniņmuižas 50,2,49,4/9,602.,1337,65500
-Проект Метрополия - продается 3х-комнатная квартира перепланиро,Anniņmuižas 38,2,90,8/18,Jaun.,1567,141000
+description,address,rooms,area(kvm.),floor,building_type,rent/month,price,region,url
+Pārdod izremontētu trīsistabu dzīvokli 602 sērijas mājā Imantā. ,Dammes 31,3,62,4/9,602.,1371,85000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/flfle.html
+N/A,Anniņmuižas 30,3,76,8/12,Specpr.,1395,106000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/dbhnx.html
+Pārdod trīsistabu dzīvokli 602 sērijas mājā Imantā. Pie mājas ir,Dammes 27,3,61,9/9,602.,1033,63000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/bfxnf.html
+Elegants gaišs un plašs 3-istabu dzīvoklis jauna projekta ēkā. ,Progresa 3,3,99,1/6,Jaun.,1606,159000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gnhgh.html
+Современная компактная и в тоже время комфортная квартира.  ,Slokas 195,2,39,1/5,LT proj.,1769,69000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gkfbf.html
+Просторная и уютная трехкомнатная квартира. Окна выходят на обе ,Kurzemes pr. 42,3,66,2/5,LT proj.,1091,72000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/adknx.html
+Pārdodu labu gaišu dzīvokli klusā vietā ar skaistu skatu. Ļoti ,Kurzemes pr. 152,2,51,9/9,602.,940,47950,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/cemkh.html
+Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Rigondas g. 10,2,50,6/9,602.,1100,55000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/glkbp.html
+Предлагаем квартиру в красивом зеленом микрорайоне. Квартира н,Jūrmalas g. 99,3,62,8/9,602.,1210,75000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/fngde.html
+Kvalitatīvs 2007. gada jaunais projekts Imantas Pērle saulains ,Kleistu 11 k1,2,54,3/16,Jaun.,1852,100000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/dgnoh.html
+N/A,Anniņmuižas 52,2,52,4/9,602.,1017,52900,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/djdno.html
+Продаётся 4-х комнатная квартира 467 серии. 3 изолированные комн,Anniņmuižas 82,4,75,8/9,467.,1280,96000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/acpgd.html
+Lielisks 3-istabu dzīvoklis Imantā pilnībā iekārtots dzīvošanai,Dammes 31,3,62,4/9,602.,1371,85000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/bkxdn.html
+Silts saulains kluss divistabu dzīvoklis pašā augstākajā no mā,Anniņmuižas 46,2,48,9/9,602.,1052,50500,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gxfke.html
+Продаю квартиру без ремонта. Окна выходят на обе стороны в квар,Kurzemes pr. 48,2,50,4/5,LT proj.,1000,49995,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/achbe.html
+N/A,Kurzemes pr. 142,2,53,2/9,602.,1623,86000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/agdkm.html
+Istabas izolētas. Dzīvoklis nav stūra pilnība atbrīvotsSl,Slokas 167,2,38,1/5,LT proj.,1053,40000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gciem.html
+Tiek pārdots 3 istabu dzīvoklis nav stūra sauss 2 izolētas is,Jūrmalas g. 101,3,63,1/9,602.,952,60000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/eiifj.html
+Pārdod 2 istabu dzīvokli 602 sērijas ēkā. Ļoti laba atrašanās vi,Kurzemes pr. 106,2,50,9/9,602.,960,48000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/eixmm.html
+N/A,Dammes 30,2,39,1/5,LT proj.,1462,57000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/affoc.html
+Pārdodu divistabu dzīvokli bez remonta kooperatīvā  Imanta . R,Kurzemes pr. 32,2,50,5/5,LT proj.,940,47000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/aimjl.html
+N/A,Dammes 27,3,61,9/9,602.,1033,63000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gdeni.html
+Īpašnieks pārdod 3 istabu dzīvokli Imantā. Dzīvokļa plānojums - ,Dammes 15,3,61,2/9,602.,1139,69500,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/cbmgk.html
+N/A,Kurzemes pr. 68,2,49,1/5,LT proj.,994,48700,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/bgpxc.html
+N/A,Slokas 173,3,67,2/5,LT proj.,1142,76500,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/aimmx.html
+Pārdod 3 istabu dzīvokli privatizētu ar visām ērtībām Imantā ,Dammes 8,3,68,6/9,602.,956,65000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/fgbnx.html
+Divu istabu dzīvoklis ar 269m2 lielu privātu terasi.  Dzīvokl,Anniņmuižas 43,2,97,1/24,Jaun.,1649,160000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gxljc.html
+Продаётся квартира с отличным расположением в Иманте с землёй в,Anniņmuižas 50,2,49,4/9,602.,1337,65500,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/aglep.html
+Проект Метрополия - продается 3х-комнатная квартира перепланиро,Anniņmuižas 38,2,90,8/18,Jaun.,1567,141000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/dikej.html
+Īpašnieks pārdod 3 istabu dzīvokli Imantā. 2 istabas izolētas. D,Jūrmalas g. 99,3,63,8/9,602.,1190,75000,imanta,https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/bjjxb.html

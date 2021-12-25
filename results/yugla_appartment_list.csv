@@ -1,31 +1,31 @@
-description,address,rooms,area(kvm.),floor,building_type,rent/month,price
-Tiek pārdots dzīvoklis ar mierīgu skatu uz ezeru. +Mājīgs kār,Murjāņu 46,1,31,5/5,Hrušč.,1032,31999
-Владелец продаёт просторную (51.7 m2) двухкомнатную квартитру. Р,Tirzas 3,2,52,5/5,Hrušč.,1154,60000
-Pārdodas pilnībā mēbelēts dzīvoklis ar zemi (~300m2) slēgtā ciem,Juglas 54,2,77,1/2,Jaun.,2195,169000
-Silts 3 istabu dzīvoklis vietā ar labi attīstītu infrastruktūru.,Silciema 15 k-5,3,57,1/5,Hrušč.,860,49000
-Продаю или меняю. Две комнаты в доме типа общежития с общей кухн,Brīvības 385,2,28,3/3,P. kara,768,21500
-Gaišs gaumīgs un plašs 57m2 liels trīsistabu dzīvoklis Juglā me,Silciema 13/2,3,57,4/5,LT proj.,1053,60000
-Īpašnieks pārdod siltu un gaišu 3 istabas dzīvokli Juglā - klusā,Kvēles 29,3,59,5/5,Hrušč.,961,56698
-Комнаты смежные. Окошки все на южную сторону. Просится косме,Kvēles 27,2,47,4/5,Hrušč.,947,44500
-Продаю просторную светлую квартру 39 кв. м. "покупай и живи". Бо,Meiju 2,1,39,4/5,M. ģim.,1077,42000
-Ja vēlies investēt naudu nekustamajā īpašumā par izdevīgu cenu ,Mārkalnes 5,1,17,4/5,Specpr.,885,15037
-Autonoma ieeja liela terase savs zemes gabals penthaus tipa d,Juglas krastm. 17,2,133,2/2,Jaun.,969,128900
-Tiek pārdots mājīgs un silts vienistabas dzīvoklis pie Juglas ez,Baltezera 5,1,26,1/5,Hrušč.,1288,33500
-Предлагается для продажи 1 комнатная квартира в кирпичном доме ,Mārkalnes 2/k3,1,29,2/2,P. kara,948,27500
-Lv RuPārdod istaba kopmītņu tipa mājā. Tika veikts remonts: s,Mārkalnes 1,1,18,4/5,M. ģim.,667,12000
-Pārdod gišu izremontētu divistabu dzīvokli Juglā (43.61 kvm). Di,Kvēles 35,2,44,4/5,LT proj.,1113,48950
-Tiek pārdots divistabu dzīvoklis. Kopējā platība 42.69 kv. m sa,Brīvības 391,2,43,3/5,Hrušč.,895,38500
-Visas ērtības stikla paketes met. durvis remonts. Remonts kāp,Mārkalnes 5,1,18,1/5,Specpr.,750,13500
-Теплая и солнечная квартира в комфортной локации. К продаже ,Juglas 53,2,45,1/5,Hrušč.,1033,46500
-Pārdod 2 istabu dzīvokli labā atrašanās vietā Juglā. Netālu ir e,Silciema 13,2,47,5/5,Hrušč.,1170,55000
-Pārdod dzīvokli Juglas labākajā un zaļākajā rajonā pie Juglas k,Baltezera 5,1,26,1/5,Hrušč.,1288,33500
-Tiek pārdots saulains divistabu dzīvoklis Juglā. Istabas caursta,Juglas 43,2,47,5/5,Hrušč.,1277,60000
-Gaišs vienistabu dzīvoklis starp diviem ezeriem Juglā. Plānoju,Veldres 32,1,35,2/13,Specpr.,1029,36000
-Pārdošanā vienīgais trīs istabu dzīvoklis ķiegeļmājas projektā ,Mārkalnes 5,3,49,2/5,Specpr.,908,44500
-Vienistabas dzīvoklis Juglā (17 kvm. )Lieliks investīcijas obj,Mārkalnes 5,1,17,5/5,Specpr.,897,15256
-Pārdod modernu divistabu dzīvokli vienā no Rīgas labākajiem mazs,Brīvības 386,2,45,6/6,Jaun.,1947,87600
-Gaišs silts un saulains divistabu dzīvoklis ar skatu uz zaļo me,Malienas 64,2,47,2/5,LT proj.,1309,61500
-Pārdodam saulainu un gaišu dzīvokli Juglā. +Tc Alfa un TC Jugl,Brīvības 363,2,43,5/5,Hrušč.,1279,55000
-Dzīvoklis ar mājas sajūtu kādu nepiedāvā neviens cits jaunais p,Juglas krastm. 17,2,138,2/2,Jaun.,934,128900
-Penthaus pa visu mājas 2. stāvu - autonoma ieeja liela terase,Juglas krastm. 17,2,133,2/2,Jaun.,969,128900
-Pārdodas istaba 13m  mājā ar kopīgu virtuvi vannas istabu un v,Brīvības 387,1,13,2/3,P. kara,708,9200
+description,address,rooms,area(kvm.),floor,building_type,rent/month,price,region,url
+Tiek pārdots dzīvoklis ar mierīgu skatu uz ezeru. +Mājīgs kār,Murjāņu 46,1,31,5/5,Hrušč.,1032,31999,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/fgihh.html
+N/A,Tirzas 3,2,52,5/5,Hrušč.,1154,60000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/aendh.html
+Pārdodas pilnībā mēbelēts dzīvoklis ar zemi (~300m2) slēgtā ciem,Juglas 54,2,77,1/2,Jaun.,2195,169000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/afmxh.html
+Silts 3 istabu dzīvoklis vietā ar labi attīstītu infrastruktūru.,Silciema 15 k-5,3,57,1/5,Hrušč.,860,49000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/aeohh.html
+Продаю или меняю. Две комнаты в доме типа общежития с общей кухн,Brīvības 385,2,28,3/3,P. kara,768,21500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/alcmk.html
+Gaišs gaumīgs un plašs 57m2 liels trīsistabu dzīvoklis Juglā me,Silciema 13/2,3,57,4/5,LT proj.,1053,60000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/afcoj.html
+Īpašnieks pārdod siltu un gaišu 3 istabas dzīvokli Juglā - klusā,Kvēles 29,3,59,5/5,Hrušč.,961,56698,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/cpfok.html
+Комнаты смежные. Окошки все на южную сторону. Просится косме,Kvēles 27,2,47,4/5,Hrušč.,947,44500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/anhcj.html
+Продаю просторную светлую квартру 39 кв. м. "покупай и живи". Бо,Meiju 2,1,39,4/5,M. ģim.,1077,42000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ongec.html
+Ja vēlies investēt naudu nekustamajā īpašumā par izdevīgu cenu ,Mārkalnes 5,1,17,4/5,Specpr.,885,15037,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/chbjl.html
+Autonoma ieeja liela terase savs zemes gabals penthaus tipa d,Juglas krastm. 17,2,133,2/2,Jaun.,969,128900,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/eedpj.html
+Tiek pārdots mājīgs un silts vienistabas dzīvoklis pie Juglas ez,Baltezera 5,1,26,1/5,Hrušč.,1288,33500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/bepbl.html
+Предлагается для продажи 1 комнатная квартира в кирпичном доме ,Mārkalnes 2/k3,1,29,2/2,P. kara,948,27500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/clfoo.html
+Lv RuPārdod istaba kopmītņu tipa mājā. Tika veikts remonts: s,Mārkalnes 1,1,18,4/5,M. ģim.,667,12000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/cmepg.html
+Pārdod gišu izremontētu divistabu dzīvokli Juglā (43.61 kvm). Di,Kvēles 35,2,44,4/5,LT proj.,1113,48950,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/conmf.html
+Tiek pārdots divistabu dzīvoklis. Kopējā platība 42.69 kv. m sa,Brīvības 391,2,43,3/5,Hrušč.,895,38500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ahmxj.html
+Visas ērtības stikla paketes met. durvis remonts. Remonts kāp,Mārkalnes 5,1,18,1/5,Specpr.,750,13500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/dlppl.html
+Теплая и солнечная квартира в комфортной локации. К продаже ,Juglas 53,2,45,1/5,Hrušč.,1033,46500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ahohh.html
+Pārdod 2 istabu dzīvokli labā atrašanās vietā Juglā. Netālu ir e,Silciema 13,2,47,5/5,Hrušč.,1170,55000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/fhxom.html
+Pārdod dzīvokli Juglas labākajā un zaļākajā rajonā pie Juglas k,Baltezera 5,1,26,1/5,Hrušč.,1288,33500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ebhmg.html
+Tiek pārdots saulains divistabu dzīvoklis Juglā. Istabas caursta,Juglas 43,2,47,5/5,Hrušč.,1277,60000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/coohh.html
+Gaišs vienistabu dzīvoklis starp diviem ezeriem Juglā. Plānoju,Veldres 32,1,35,2/13,Specpr.,1029,36000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/alijm.html
+Pārdošanā vienīgais trīs istabu dzīvoklis ķiegeļmājas projektā ,Mārkalnes 5,3,49,2/5,Specpr.,908,44500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/gocbb.html
+Vienistabas dzīvoklis Juglā (17 kvm. )Lieliks investīcijas obj,Mārkalnes 5,1,17,5/5,Specpr.,897,15256,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ehjkn.html
+Pārdod modernu divistabu dzīvokli vienā no Rīgas labākajiem mazs,Brīvības 386,2,45,6/6,Jaun.,1947,87600,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/hmgmn.html
+Gaišs silts un saulains divistabu dzīvoklis ar skatu uz zaļo me,Malienas 64,2,47,2/5,LT proj.,1309,61500,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/bxxjp.html
+Pārdodam saulainu un gaišu dzīvokli Juglā. +Tc Alfa un TC Jugl,Brīvības 363,2,43,5/5,Hrušč.,1279,55000,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/aflbj.html
+Dzīvoklis ar mājas sajūtu kādu nepiedāvā neviens cits jaunais p,Juglas krastm. 17,2,138,2/2,Jaun.,934,128900,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/eibxj.html
+Penthaus pa visu mājas 2. stāvu - autonoma ieeja liela terase,Juglas krastm. 17,2,133,2/2,Jaun.,969,128900,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/emece.html
+Pārdodas istaba 13m  mājā ar kopīgu virtuvi vannas istabu un v,Brīvības 387,1,13,2/3,P. kara,708,9200,yugla,https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ahhik.html

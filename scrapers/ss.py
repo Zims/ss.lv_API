@@ -7,67 +7,64 @@ import time
 headers = {
     'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
 
-region_list = ["centre","agenskalns","yugla","imanta","ilguciems"]
+region_list = ["centre", "agenskalns", "yugla", "imanta", "ilguciems"]
 
 appartment_list = []
 
 
-def get_class(html_text):
+def get_class(html_text, region):
     tree = lxml.html.fromstring(html_text)
     tbody_table = tree.xpath('//table')[4]
 
     row_list = []
     for tr in tbody_table:
         single_row = []
-        for td in tr:
-            try:
-                if len(td.text) > 0:
-                    single_row.append(td.text)
-            except:
-                single_row.append(td.xpath('.//*/text()'))
+        row_list.append(tr)
+    print(len(row_list))
+    for row in row_list[1:31]:
+        # print(
+        #     f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}")
+        print(row[3].text)
 
-
-        row_list.append(single_row)
-        print(single_row)
-    row_list = row_list[1:31]
-    print(len(row_list[0]))
-
-    for row in row_list:
         try:
             details = {
-                "description": row[2][0].replace(',', '').replace('\n', '').replace('\t', '').replace('\r', ''),
-                "address": row[3],
-                "rooms": row[4],
-                "area": row[5],
-                "floor": row[6],
-                "building_type": row[7],
-                "rent/month": row[8].split()[0].replace(',', ''),
-                "price": row[9].split()[0].replace(',', '')
+                "description": row.find_class('d1')[0].find('a').text.replace(',', '').replace('\n', '').replace('\t', '').replace('\r', ''),
+                "address": row[3].text,
+                "rooms": row[4].text,
+                "area": row[5].text,
+                "floor": row[6].text,
+                "building_type": row[7].text,
+                "rent/month": row[8].text.split()[0].replace(',', ''),
+                "price": row[9].text.split()[0].replace(',', ''),
+                "region": region,
+                "url": f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
             }
         except:
             details = {
-                "description": row[2][0].replace(',', '').replace('\n', '').replace('\t', '').replace('\r', ''),
-                "address": row[3][0],
-                "rooms": row[4][0],
-                "area": row[5][0],
-                "floor": row[6][0],
-                "building_type": row[7][0],
-                "rent/month": row[8][0].replace(',', ''),
-                "price": row[9][0].replace(',', ''),
+                "description": "N/A",
+                "address": row[3][0].text,
+                "rooms": row[4][0].text,
+                "area": row[5][0].text,
+                "floor": row[6][0].text,
+                "building_type": row[7][0].text,
+                "rent/month": row[8][0].text.replace(',', ''),
+                "price": row[9][0].text.replace(',', ''),
+                "region": region,
+                "url": f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
             }
-        
+
         appartment_list.append(details)
         print(details)
 
 
 def write_csv(appartment_list, region):
     # write csv wit headers
-    with open(f'{region}_appartment_list.csv', 'w') as csv_file:
+    with open(f'results/{region}_appartment_list.csv', 'w') as csv_file:
         csv_file.write(
-            'description,address,rooms,area(kvm.),floor,building_type,rent/month,price\n')
+            'description,address,rooms,area(kvm.),floor,building_type,rent/month,price,region,url\n')
         for appartment in appartment_list:
             csv_file.write(
-                f'{appartment["description"]},{appartment["address"]},{appartment["rooms"]},{appartment["area"]},{appartment["floor"]},{appartment["building_type"]},{appartment["rent/month"]},{appartment["price"]}\n')
+                f'{appartment["description"]},{appartment["address"]},{appartment["rooms"]},{appartment["area"]},{appartment["floor"]},{appartment["building_type"]},{appartment["rent/month"]},{appartment["price"]},{region},{appartment["url"]}\n')
         appartment_list.clear()
 
 
@@ -75,10 +72,9 @@ def main():
     for region in region_list:
         base_url = f"https://www.ss.lv/lv/real-estate/flats/riga/{region}/sell/"
         html_text = requests.get(base_url, headers=headers).text
-        get_class(html_text)
+        get_class(html_text, region)
         write_csv(appartment_list, region)
         time.sleep(1)
-
 
 
 if __name__ == '__main__':
