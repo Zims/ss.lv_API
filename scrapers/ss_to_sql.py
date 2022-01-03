@@ -13,14 +13,20 @@ command1 = '''CREATE TABLE IF NOT EXISTS ss_appartments (id INTEGER PRIMARY KEY 
                                                             address TEXT,
                                                             rooms INTEGER,
                                                             area INTEGER,
-                                                            floor INTEGER
+                                                            floor INTEGER,
+                                                            floor_max INTEGER,
+                                                            building_type TEXT,
+                                                            rent_month INTEGER,
+                                                            price INTEGER,
+                                                            region TEXT,
+                                                            url TEXT
                                                             )'''
 c.execute(command1)
 
 headers = {
     'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
 
-region_list = ["centre"]
+region_list = ["centre", "agenskalns", "yugla", "imanta", "ilguciems"]
 
 appartment_list = []
 
@@ -64,8 +70,40 @@ def get_class(html_text, region):
             floor = int(row[6].text.split('/')[0])
         except:
             floor = int(row[6][0].text.split('/')[0])
-        c.execute('INSERT INTO ss_appartments (description,address,rooms,area,floor) VALUES (?, ?, ?, ?, ?)',
-                  (description, address, rooms, area, floor,))
+        
+        try:
+            floor_max = int(row[6].text.split('/')[1])
+        except:
+            floor_max = int(row[6][0].text.split('/')[1])
+
+        try:
+            building_type = row[7].text
+        except:
+            building_type = row[7][0].text
+
+        try:
+            rent_month = int(row[8].text.split()[0].replace(',', ''))
+        except:
+            rent_month = int(row[8][0].text.replace(',', ''))
+        
+        try:
+            price = int(row[9].text.split()[0].replace(',', ''))
+        except:
+            price = int(row[9][0].text.replace(',', ''))
+
+        try:
+            region = region
+        except:
+            region = "N/A"
+        
+        try:
+            url = f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
+        except:
+            url = f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
+        
+        # Write to db
+        c.execute('INSERT INTO ss_appartments (description,address,rooms,area,floor,floor_max,building_type,rent_month,price,region,url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                  (description, address, rooms, area, floor,floor_max,building_type,rent_month,price,region,url,))
         conn.commit()
 
 
