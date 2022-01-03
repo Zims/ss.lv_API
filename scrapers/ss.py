@@ -22,18 +22,36 @@ def get_class(html_text, region):
         single_row = []
         row_list.append(tr)
     for row in row_list[1:31]:
+        try:
+            description = row.find_class('d1')[0].find('a').text.replace(
+                ',', "").replace('\n', "").replace('\t', "").replace('\r', "")
+        except:
+            description = "N/A"
+        try:
+            address = row[3].text
+        except:
+            address: row[3][0].text
+
+        try:
+            if row[4].text == "Citi":
+                rooms = 0
+            else:
+                rooms = int(row[4].text)
+        except:
+            rooms = int(row[4][0].text)
 
         try:
             details = {
-                "description": row.find_class('d1')[0].find('a').text.replace(',', "").replace('\n', "").replace('\t', "").replace('\r', ""),
-                "address": row[3].text,
-                "rooms": row[4].text,
-                "area": row[5].text,
-                "floor": row[6].text.split('/')[0],
-                "floor_max": row[6].text.split('/')[1],
+                "description": description,
+                "address": address,
+                "rooms": rooms,
+
+                "area": int(row[5].text),
+                "floor": int(row[6].text.split('/')[0]),
+                "floor_max": int(row[6].text.split('/')[1]),
                 "building_type": row[7].text,
-                "rent/month": row[8].text.split()[0].replace(',', ''),
-                "price": row[9].text.split()[0].replace(',', ''),
+                "rent/month": int(row[8].text.split()[0].replace(',', '')),
+                "price": int(row[9].text.split()[0].replace(',', '')),
                 "region": region,
                 "url": f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
             }
@@ -41,13 +59,13 @@ def get_class(html_text, region):
             details = {
                 "description": "N/A",
                 "address": row[3][0].text,
-                "rooms": row[4][0].text,
-                "area": row[5][0].text,
-                "floor": row[6][0].text.split('/')[0],
-                "floor_max": row[6][0].text.split('/')[1],
+                "rooms": int(row[4][0].text),
+                "area": int(row[5][0].text),
+                "floor": int(row[6][0].text.split('/')[0]),
+                "floor_max": int(row[6][0].text.split('/')[1]),
                 "building_type": row[7][0].text,
-                "rent/month": row[8][0].text.replace(',', ''),
-                "price": row[9][0].text.replace(',', ''),
+                "rent/month": int(row[8][0].text.replace(',', '')),
+                "price": int(row[9][0].text.replace(',', '')),
                 "region": region,
                 "url": f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
             }
@@ -64,6 +82,7 @@ def write_csv(appartment_list, region):
             csv_file.write(
                 f'{appartment["description"]},{appartment["address"]},{appartment["rooms"]},{appartment["area"]},{appartment["floor"]},{appartment["floor_max"]},{appartment["building_type"]},{appartment["rent/month"]},{appartment["price"]},{region},{appartment["url"]}\n')
         appartment_list.clear()
+
 
 def write_json(appartment_list, region):
     # write as utf-8 json
