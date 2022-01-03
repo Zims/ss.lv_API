@@ -115,6 +115,7 @@ def main():
         get_class(html_text, region)
         time.sleep(1)
 
+conn.close()
 
 if __name__ == '__main__':
     main()
