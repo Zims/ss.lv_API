@@ -26,7 +26,7 @@ c.execute(command1)
 headers = {
     'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
 
-region_list = ["centre", "agenskalns", "yugla", "imanta", "ilguciems"]
+region_list = ["centre", "agenskalns", "yugla", "imanta", "ilguciems", "kengarags", "teika", "ziepniekkalns"]
 
 appartment_list = []
 
@@ -102,7 +102,9 @@ def get_class(html_text, region):
             url = f"https://www.ss.lv{row.find_class('msga2')[1].find('a').get('href')}"
         
         # Write to db
-        c.execute('INSERT INTO ss_appartments (description,address,rooms,area,floor,floor_max,building_type,rent_month,price,region,url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        c.execute('''INSERT INTO ss_appartments 
+                    (description,address,rooms,area,floor,floor_max,building_type,rent_month,price,region,url) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
                   (description, address, rooms, area, floor,floor_max,building_type,rent_month,price,region,url,))
         conn.commit()
 
@@ -115,7 +117,7 @@ def main():
         get_class(html_text, region)
         time.sleep(1)
 
-conn.close()
 
 if __name__ == '__main__':
     main()
+    conn.close()
