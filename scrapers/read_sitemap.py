@@ -10,7 +10,6 @@ individual_property = []
 def check_sitemap():
     xmlstr = requests.get('https://www.ss.lv/sitemap.xml').text
     root = ET.fromstring(xmlstr)
-
     # extract all urls
     urls = []
     for url in root.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'):
@@ -33,14 +32,11 @@ def collector_property_links():
                 global individual_property
                 individual_property.append(line)
         time.sleep(5)
-        print("Individual property links:")
-        for property in individual_property:
-            print(property)
         print("Sleeping for 5 seconds")
     print(len(individual_property))
 
 def save_to_file():
-    with open("scrapers/ss_appartments.txt", "w") as f:
+    with open("ss_appartments.txt", "w") as f:
         for property in individual_property:
             f.write(property.strip() + "\n")
 
