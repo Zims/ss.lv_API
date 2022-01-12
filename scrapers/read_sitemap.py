@@ -40,9 +40,9 @@ def collector_property_links():
     print(len(individual_property))
 
 def save_to_file():
-    with open("ss_appartments.txt", "w") as f:
+    with open("scrapers/ss_appartments.txt", "w") as f:
         for property in individual_property:
-            f.write(property + "\n")
+            f.write(property.strip() + "\n")
 
 
 check_sitemap()
