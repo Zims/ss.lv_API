@@ -23,7 +23,7 @@ with open("ss_appartments.txt", "r") as f:
     lines = [line.strip() for line in lines]
 
 # define connection to database and create cursor
-conn = sqlite3.connect('ss_db.sqlite3')
+conn = sqlite3.connect('ss_db_db.sqlite3')
 cur = conn.cursor()
 
 write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_on_sale (id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,12 +39,27 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_on_sale (id INTEGER PRIMARY K
                                                             item_type TEXT,
                                                             extras TEXT,
                                                             price INTEGER,
+                                                            tx_type TEXT,
                                                             date_added TEXT,
                                                             url TEXT
                                                             )'''                                                        
 cur.execute(write_to_db)
 
-def detail_parser(root,url):
+def detail_parser(url):
+    try:
+        r = requests.get(url, headers={'User-Agent': random.choice(user_agents)})
+        root = etree.HTML(r.text)
+    except:
+        print("Nepareiza saite")
+        pass
+    # create a tree from the html string
+    try:
+        tx_type = root.xpath('//h2[@class="headtitle"]/text()')
+        tx_type = tx_type[-1].replace(' / ','')
+        print(tx_type)
+    except:
+        tx_type = 'N/A'
+    
     try:
         description = root.xpath('//div[@id="msg_div_msg"]/text()')
         description = " ".join(description).strip().replace('\t', '')
@@ -103,9 +118,9 @@ def detail_parser(root,url):
 
         # Write to db
     cur.execute('''INSERT INTO ss_all_on_sale 
-                (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,date_added,url) 
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                (description, city, rajons, street,rooms,size,floor,max_floor,series,item_type,extras,price,date_added,url,))
+                (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url) 
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                (description, city, rajons, street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,))
     conn.commit()
 
 def pardod_check(url):
@@ -127,8 +142,7 @@ def pardod_check(url):
         pass
 
 for url in lines[100:200]:
+    detail_parser(url)
     # print url index
-    if lines.index(url) % 25 == 0:
-        print(lines.index(url))
-    pardod_check(url)
+    print(lines.index(url))
     time.sleep(0.3)
