@@ -5,7 +5,7 @@
 3. With FastAPI create data api for read purposes
 
 
-It now has a db of 17k+ flats
+It now has a db of 17k+ flats. (because og github you will need to create the initial db yourself)
 Running parse_flat_detail.py checks for all flats listed on the site. 
 Then compares the results to links already in the db. If a link is new it parses it and adds to db.
 
