@@ -3,3 +3,7 @@
 sitemap.txt
 __pycache__/
 *.pyc
+ss_db_copy.sqlite3
+ss_db.sqlite3
+ss_all.sqlite3
+*.sqlite3

@@ -4,6 +4,35 @@ import time
 import datetime
 import sqlite3
 import random
+from read_sitemap import LinkCollector
+
+link_collector = LinkCollector()
+link_collector.check_sitemap()
+link_collector.collector_property_links()
+individual_property_links = link_collector.individual_property
+print(f'{len(individual_property_links)} links collected from ss.lv')
+
+new_individual_property_links = []
+# define connection to database and create cursor
+conn = sqlite3.connect('ss_all.sqlite3')
+cur = conn.cursor()
+
+# read all links from database ss_all.sqlite3 all urls
+cur.execute('''SELECT url FROM ss_all''')
+all_urls = cur.fetchall()
+
+# create a list of all urls
+all_urls_list = []
+for url in all_urls:
+    all_urls_list.append(url[0])
+print(f'{len(all_urls_list)} links collected from db')
+
+# compare all urls from database with all urls from sitemap
+for url in all_urls_list:
+    if url in individual_property_links:
+        individual_property_links.remove(url)
+print(f'{len(individual_property_links)} new links collected')
+
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -16,17 +45,8 @@ user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
 ]
 
-with open("ss_appartments.txt", "r") as f:
-    # read line by line and add to list
-    lines = f.readlines()
-    # remove \n from each line
-    lines = [line.strip() for line in lines]
 
-# define connection to database and create cursor
-conn = sqlite3.connect('ss_db_db.sqlite3')
-cur = conn.cursor()
-
-write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_on_sale (id INTEGER PRIMARY KEY AUTOINCREMENT,
+write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOINCREMENT,
                                                             description TEXT,
                                                             city TEXT,
                                                             rajons TEXT,
@@ -42,7 +62,7 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_on_sale (id INTEGER PRIMARY K
                                                             tx_type TEXT,
                                                             date_added TEXT,
                                                             url TEXT
-                                                            )'''                                                        
+                                                            )'''
 cur.execute(write_to_db)
 
 def detail_parser(url):
@@ -56,10 +76,9 @@ def detail_parser(url):
     try:
         tx_type = root.xpath('//h2[@class="headtitle"]/text()')
         tx_type = tx_type[-1].replace(' / ','')
-        print(tx_type)
     except:
         tx_type = 'N/A'
-    
+
     try:
         description = root.xpath('//div[@id="msg_div_msg"]/text()')
         description = " ".join(description).strip().replace('\t', '')
@@ -117,8 +136,8 @@ def detail_parser(url):
         date_added = None
 
         # Write to db
-    cur.execute('''INSERT INTO ss_all_on_sale 
-                (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url) 
+    cur.execute('''INSERT INTO ss_all
+                (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
                 (description, city, rajons, street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,))
     conn.commit()
@@ -141,8 +160,8 @@ def pardod_check(url):
     except:
         pass
 
-for url in lines[100:200]:
+for url in individual_property_links:
     detail_parser(url)
     # print url index
-    print(lines.index(url))
+    print(individual_property_links.index(url))
     time.sleep(0.3)
