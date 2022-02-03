@@ -22,16 +22,16 @@ cur.execute('''SELECT url FROM ss_all''')
 all_urls = cur.fetchall()
 
 # create a list of all urls
-all_urls_list = []
+all_db_urls_list = []
 for url in all_urls:
-    all_urls_list.append(url[0])
-print(f'{len(all_urls_list)} links collected from db')
+    all_db_urls_list.append(url[0])
+print(f'{len(all_db_urls_list)} links collected from db')
 
-# compare all urls from database with all urls from sitemap
-for url in all_urls_list:
-    if url in individual_property_links:
-        individual_property_links.remove(url)
-print(f'{len(individual_property_links)} new links collected')
+# compare all urls from database with all urls from sitemap using the set() function
+new_individual_property_links = list(
+    set(individual_property_links) - set(all_db_urls_list))
+
+print(f'{len(new_individual_property_links)} new links collected')
 
 
 user_agents = [
@@ -65,17 +65,20 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOI
                                                             )'''
 cur.execute(write_to_db)
 
+
 def detail_parser(url):
     try:
-        r = requests.get(url, headers={'User-Agent': random.choice(user_agents)})
+        r = requests.get(
+            url, headers={'User-Agent': random.choice(user_agents)})
         root = etree.HTML(r.text)
     except:
         print("Nepareiza saite")
+        print(url)
         pass
     # create a tree from the html string
     try:
         tx_type = root.xpath('//h2[@class="headtitle"]/text()')
-        tx_type = tx_type[-1].replace(' / ','')
+        tx_type = tx_type[-1].replace(' / ', '')
     except:
         tx_type = 'N/A'
 
@@ -131,37 +134,21 @@ def detail_parser(url):
         price = None
     try:
         date_added = root.xpath(
-            '//td[@valign="bottom"]/table/*/*/text()')[0].replace('Datums: ', '')
+            '//td[@valign="bottom"]/table/*/*/text()')[0].replace('Datums: ', '').split(' ')[0]
     except:
         date_added = None
-
-        # Write to db
+    print(date_added)
+    # Write to db
     cur.execute('''INSERT INTO ss_all
                 (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
                 VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                (description, city, rajons, street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,))
+                (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url,))
     conn.commit()
 
-def pardod_check(url):
-    # look for only pardod links
-    r = requests.get(url, headers={'User-Agent': random.choice(user_agents)})
-    # create a tree from the html string
-    root = etree.HTML(r.text)
-    # find by class name
-    appartments = root.xpath('//h2[@class="headtitle"]/text()')
-    try:
-        if 'Pārdod' in appartments[2]:
-            print("Pārdod atrasts!!!")
-            detail_parser(root,url)
-            return True
-        else:
-            print("Pārdod nav atrasts...")
-            return False
-    except:
-        pass
 
-for url in individual_property_links:
-    detail_parser(url)
+#
+for url in new_individual_property_links:
+    detail_parser(url.strip())
     # print url index
     print(individual_property_links.index(url))
     time.sleep(0.3)

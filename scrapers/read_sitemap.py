@@ -36,7 +36,7 @@ class LinkCollector:
                     global individual_property
                     self.individual_property.append(line)
             time.sleep(2)
-            print("Collecting links from each 'site_map/sitemap.msg.real-estate'. Sleeping for 2 seconds")
+            print("Collecting links from each 'https://www.ss.lv/site_map/sitemap.msg.real-estate'. Sleeping for 2 seconds")
         # print(len(self.individual_property))
 
     # write to txt file
