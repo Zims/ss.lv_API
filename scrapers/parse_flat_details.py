@@ -34,7 +34,6 @@ new_individual_property_links = list(
 
 print(f'{len(new_individual_property_links)} new links collected')
 
-
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -45,7 +44,6 @@ user_agents = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
 ]
-
 
 write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOINCREMENT,
                                                             description TEXT,
@@ -153,9 +151,8 @@ def detail_parser(url):
 
     db_query()
 
-
 def remove_old_records():
-    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-6 month')''')
+    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-11 month')''')
     print(f'{cur.rowcount} records deleted')
     # delete records where date_added is null
     cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
@@ -167,4 +164,4 @@ for url in new_individual_property_links:
     detail_parser(url.strip())
     # print url index
     print(individual_property_links.index(url))
-    time.sleep(0.2)
+    time.sleep(0.1)
