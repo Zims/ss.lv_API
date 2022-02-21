@@ -14,7 +14,7 @@ print(f'{len(individual_property_links)} links collected from ss.lv')
 
 new_individual_property_links = []
 # define connection to database and create cursor
-conn = sqlite3.connect('ss_all.sqlite3')
+conn = sqlite3.connect('ss_all_new_dates.sqlite3')
 cur = conn.cursor()
 
 # read all links from database ss_all.sqlite3 all urls
@@ -30,6 +30,7 @@ print(f'{len(all_db_urls_list)} links collected from db')
 # compare all urls from database with all urls from sitemap using the set() function
 new_individual_property_links = list(
     set(individual_property_links) - set(all_db_urls_list))
+# new_individual_property_links = individual_property_links
 
 print(f'{len(new_individual_property_links)} new links collected')
 
@@ -60,7 +61,7 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOI
                                                             extras TEXT,
                                                             price INTEGER,
                                                             tx_type TEXT,
-                                                            date_added TEXT,
+                                                            date_added DATE,
                                                             url TEXT
                                                             )'''
 cur.execute(write_to_db)
@@ -74,7 +75,6 @@ def detail_parser(url):
     except:
         print("Nepareiza saite")
         print(url)
-        pass
     # create a tree from the html string
     try:
         tx_type = root.xpath('//h2[@class="headtitle"]/text()')
@@ -134,10 +134,14 @@ def detail_parser(url):
         price = None
     try:
         date_added = root.xpath(
-            '//td[@valign="bottom"]/table/*/*/text()')[0].replace('Datums: ', '').split(' ')[0]
+            '//td[@valign="bottom"]/table/*/*/text()')[0].replace('Datums: ', '').split(' ')[0].strip()
+
+        # convert date_added from %dd.%mm.%yyyy to %yyyy-%mm-%dd
+        date_added = date_added.split('.')[2]+'-'+date_added.split('.')[1]+'-'+date_added.split('.')[0]
+        date_added = date_added.strip()
+
     except:
         date_added = None
-    print(date_added)
     # Write to db
     cur.execute('''INSERT INTO ss_all
                 (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
@@ -145,10 +149,17 @@ def detail_parser(url):
                 (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url,))
     conn.commit()
 
+def remove_old_records():
+    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-6 month')''')
+    print(f'{cur.rowcount} records deleted')
+    # delete records where date_added is null
+    cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
+    conn.commit()
 
-#
+
+remove_old_records()
 for url in new_individual_property_links:
     detail_parser(url.strip())
     # print url index
     print(individual_property_links.index(url))
-    time.sleep(0.3)
+    time.sleep(0.2)

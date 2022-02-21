@@ -35,9 +35,12 @@ class LinkCollector:
                 if "/lv/real-estate/flats/riga/" in line:
                     global individual_property
                     self.individual_property.append(line)
-            time.sleep(2)
-            print("Collecting links from each 'https://www.ss.lv/site_map/sitemap.msg.real-estate'. Sleeping for 2 seconds")
+            time.sleep(1)
+            print("Collecting links from each 'https://www.ss.lv/site_map/sitemap.msg.real-estate'. Sleeping for 1 seconds")
         # print(len(self.individual_property))
+        with open("ss_appartments.txt", "w") as f:
+            for property in self.individual_property:
+                f.write(property.strip() + "\n")
 
     # write to txt file
     def save_to_file(self):
