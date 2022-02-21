@@ -142,12 +142,17 @@ def detail_parser(url):
 
     except:
         date_added = None
+    
     # Write to db
-    cur.execute('''INSERT INTO ss_all
-                (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url,))
-    conn.commit()
+    def db_query():
+        cur.execute('''INSERT INTO ss_all
+                    (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                    (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url,))
+        conn.commit()
+
+    db_query()
+
 
 def remove_old_records():
     cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-6 month')''')
@@ -156,8 +161,8 @@ def remove_old_records():
     cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
     conn.commit()
 
-
 remove_old_records()
+
 for url in new_individual_property_links:
     detail_parser(url.strip())
     # print url index
