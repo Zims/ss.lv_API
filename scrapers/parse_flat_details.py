@@ -30,13 +30,13 @@ for url in all_urls:
     all_db_urls_list.append(url[0])
 print(f'{len(all_db_urls_list)} links collected from db')
 
-# compare all urls from database with all urls from sitemap using the set() function
-# and create a list of new urls only
+# # compare all urls from database with all urls from sitemap using the set() function
+# # and create a list of new urls only
 new_individual_property_links = list(
     set(individual_property_links) - set(all_db_urls_list))
+new_individual_property_links = individual_property_links
 
-
-print(f'{len(new_individual_property_links)} new links collected')
+# print(f'{len(new_individual_property_links)} new links collected')
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -65,7 +65,7 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOI
                                                             tx_type TEXT,
                                                             date_added DATE,
                                                             url TEXT,
-                                                            added_to_db DATE
+                                                            added_to_db TIMESTAMP
                                                             )'''
 cur.execute(write_to_db)
 
@@ -146,8 +146,8 @@ def detail_parser(url):
     except:
         date_added = None
     
-    # create date from datetime.now()
-    added_to_db = datetime.now().strftime('%Y-%m-%d')
+    # create date timestam from datetime.now()
+    added_to_db = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Write to db
     def db_query():
         cur.execute('''INSERT INTO ss_all
