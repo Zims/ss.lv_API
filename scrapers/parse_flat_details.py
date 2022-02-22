@@ -146,8 +146,7 @@ def detail_parser(url):
 
     except:
         date_added = None
-    
-    # create date timestam from datetime.now()
+
     added_to_db = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Write to db
     def db_query():
@@ -161,9 +160,9 @@ def detail_parser(url):
 
 def remove_old_records():
     cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-11 month')''')
-    print(f'{cur.rowcount} records deleted')
     # delete records where date_added is null
     cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
+    print(f'{cur.rowcount} records deleted')
     conn.commit()
 
 remove_old_records()
@@ -175,3 +174,9 @@ for url in new_individual_property_links:
     time.sleep(0.1)
 
 remove_old_records()
+
+todays_date = datetime.now().strftime('%Y-%m-%d')
+# get all records date_added    from db from today
+cur.execute('''SELECT date_added FROM ss_all WHERE date_added = ?''', (todays_date,))
+all_urls = cur.fetchall()
+print(f'{len(all_urls)} records for today')
