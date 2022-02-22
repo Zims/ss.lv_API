@@ -27,6 +27,7 @@ def get_place(place):
     if place == "all":
         return all_appartments
     else:
-        c.execute("SELECT * FROM ss_all WHERE price = ? ORDER BY id DESC", (place,))
+        place = place.capitalize()
+        c.execute("SELECT * FROM ss_all WHERE rajons = ? ORDER BY id DESC", (place,))
         place_appartments = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
         return place_appartments

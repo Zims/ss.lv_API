@@ -34,7 +34,8 @@ print(f'{len(all_db_urls_list)} links collected from db')
 # # and create a list of new urls only
 new_individual_property_links = list(
     set(individual_property_links) - set(all_db_urls_list))
-new_individual_property_links = individual_property_links
+# new_individual_property_links = individual_property_links
+print(f'{len(new_individual_property_links)} new links collected')
 
 # print(f'{len(new_individual_property_links)} new links collected')
 
@@ -87,7 +88,7 @@ def detail_parser(url):
 
     try:
         description = root.xpath('//div[@id="msg_div_msg"]/text()')
-        description = " ".join(description).strip().replace('\t', '')
+        description = " ".join(description).strip().replace('\t', '').replace('\n', '').replace('\r', '')
     except:
         description = "N/A"
     try:
@@ -172,3 +173,5 @@ for url in new_individual_property_links:
     # print url index
     print(individual_property_links.index(url))
     time.sleep(0.1)
+
+remove_old_records()

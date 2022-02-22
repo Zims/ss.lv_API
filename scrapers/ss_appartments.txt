@@ -1565,7 +1565,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/exhlg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/darzciems/bcmxlp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/fpxkj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahden.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/ejhxl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/gmnpc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ilguciems/dkijj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/krasta-st-area/blplgd.html
@@ -3249,16 +3248,12 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/vecriga/dipln.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/ibpmo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/deoxi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ghdge.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/fgmmk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahcfg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ilguciems/binxg.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/agpnm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/glnpl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afdfn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/fmfmj.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acllx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/hbidl.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/admjj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/amdle.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/fxlkb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/alidp.html
@@ -5062,7 +5057,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afdbb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/gffex.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/fdjmg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/eiifj.html
-﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/cmjij.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/cmjij.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/alemp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/ajbhp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/epexe.html
@@ -7712,7 +7707,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/aghfi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/fxcmp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zolitude/dhenf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aglol.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/eglmx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/krasta-st-area/bchie.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/boefg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/hhccl.html
@@ -8253,7 +8247,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/agxoc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/abjkc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ednlb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecriga/bepbc.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/cefde.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/tornjakalns/ajnkb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bolderaya/bljopl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afked.html
@@ -9898,7 +9891,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/efpnn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/egjlm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/idcbm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/hdjgi.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/aemjf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bbjmh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/ebekk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/efnnm.html
@@ -11185,7 +11177,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/hhbef.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ahikm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cibob.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/dondl.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/tornjakalns/dclce.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/aexkn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/gfbjb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/cfoxk.html
@@ -11250,6 +11241,25 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/bbmbg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gifhd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bolderaya/cccoc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/femld.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/afdgb.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/cxcng.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/cxnox.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/afebb.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gflhx.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/gobgf.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/lncpb.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gjgii.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/hxnjx.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/dfegg.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afekb.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ajche.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aappl.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/aiokk.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acllx.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/dilhd.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahfic.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/cjljg.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/dhhhk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/feenn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/darzciems/aihjx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/kngko.html
@@ -11257,9 +11267,9 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/binmo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/other/apkmj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ajcog.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/adhln.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/jmjhj.html
+﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/jmjhj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bfkeb.html
-﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/cpicc.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/cpicc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/dnijl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/ghonk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ecfxb.html
@@ -11906,7 +11916,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acdgj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cppkl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/fpmio.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/deejm.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/dilhd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bkhxb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dphhc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/gedok.html
@@ -12134,6 +12143,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bdplkf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cdxbk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/tornjakalns/dbihg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/ghlhf.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/fgmmk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/cbnko.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/afolx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecaki/ixpdx.html
@@ -12358,7 +12368,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/dbece.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/grizinkalns/bpmexo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acclx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/aigop.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/afebb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bdxpe.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/krasta-st-area/gxopi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ebfib.html
@@ -12367,7 +12376,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/ahene.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/exjkk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/afnhc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/cpihx.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/dzeguzhkalns/acxbk.html
+﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/dzeguzhkalns/acxbk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/ahedg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/hgoch.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/ebcje.html
@@ -12742,7 +12751,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gelep.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/bxmjno.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bolderaya/fjbih.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/ehoim.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/dfegg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/nlpgb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/anfnj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ackic.html
@@ -12765,6 +12773,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dolex.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/bjppm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/ajfdc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/dghcm.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/cefde.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/other/eonmo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gedch.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/adkcd.html
@@ -12843,6 +12852,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bplho.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahjkh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/alhfh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/biiic.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/admjj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afdxm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/egdbg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aieff.html
@@ -12875,7 +12885,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/apmjf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/elhgc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/coech.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cobbm.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/dhhhk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afdxe.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/blcebg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ggfbh.html
@@ -13495,7 +13504,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/dxddp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/cnpfd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/dnnik.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/dgooe.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/afdgb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/other/cpdmo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bergi/mpgog.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bpppe.html
@@ -13514,7 +13522,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dohxo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/ehknn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afdlc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/dimbi.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahfic.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/afkkk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/fmdph.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/ehigc.html
@@ -13802,13 +13809,13 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/bfdxmo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/cmjjo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/gocex.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/hgjgg.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/eglmx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/dhimx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acooo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/cccxe.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/geixk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/ckeom.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/bkcbg.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ajche.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/agcbl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/bjhij.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/anfkh.html
@@ -14713,6 +14720,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dphji.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/dhgbd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/aehkl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/afnib.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/agpnm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/chiekurkalns/gepbg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/admcg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/gcnmd.html
@@ -14895,7 +14903,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/exldh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecriga/doelg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/bxhxm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gognx.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/angbo.html
+﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/angbo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/dopgf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/dlgnf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zolitude/cjnin.html
@@ -14926,7 +14934,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/abnpg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/hgijo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/bcjoi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/hdjfo.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/lncpb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/fenen.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/fpccf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/aexgi.html
@@ -14948,7 +14955,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/feblc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/darzciems/eklfd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/bkdci.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/gdxdf.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/gobgf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ehxje.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aplpl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/katlakalns/hcmpc.html
@@ -14959,7 +14965,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/mangali/enppg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dendl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/aeelb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/degjb.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/cjljg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/dlipe.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/other/fndfc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/fdmnh.html
@@ -15075,7 +15080,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/fpjxg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/bopoe.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/dppmm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecriga/adlon.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afekb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dpobk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aedkm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/aihpe.html
@@ -15149,6 +15153,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/other/chlpx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zasulauks/dkjpm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/eiefg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/clgex.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/ejhxl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/darzciems/amxid.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zolitude/cikfd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/ckfci.html
@@ -15559,7 +15564,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/fclfd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/degpl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecaki/ipjxl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gdejg.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aappl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/achek.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zasulauks/fbiil.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/fmxxc.html
@@ -15693,7 +15697,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afkix.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/elbjk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/afhkb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ddnmk.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gflhx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/zolitude/dhong.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/agodn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/ahjgc.html
@@ -16094,7 +16097,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/chiekurkalns/cimpd.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/darzciems/cikpl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/agfnk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/cijxh.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/aiokk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/flmox.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhciems/ddcdp.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/bxjnf.html
@@ -16336,10 +16338,10 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/hehfn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dhfbf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cckom.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/apbxm.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/acpni.html
+﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/ziepniekkalns/acpni.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aephi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/cdlmk.html
-﻿https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ebohf.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ebohf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/aeoen.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/gjjhg.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/agcel.html
@@ -16367,6 +16369,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/agenskalns/dgmoc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/ajojx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/dphmk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/plyavnieki/dcjnl.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/aemjf.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/teika/cofcm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/krasta-st-area/didkn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/dbdbo.html
@@ -16472,7 +16475,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/shkirotava/oeidi.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/dmcbn.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/bchnlh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/adiob.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/cxcng.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/agphx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kipsala/kdlpm.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kliversala/hiofx.html
@@ -16742,6 +16744,7 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/adkpl.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mezhapark/goiii.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/dzeguzhkalns/cmbep.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/aexfh.html
+https://www.ss.lv/msg/lv/real-estate/flats/riga/tornjakalns/dclce.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/jaunciems/hcxml.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bierini/bciokx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/bierini/bchgfk.html
@@ -17002,7 +17005,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/ibche.ht
 https://www.ss.lv/msg/lv/real-estate/flats/riga/vecmilgravis/bxmdmh.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/egjfk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shkirotava/ifocp.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/purvciems/hxnjx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/biicj.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/ddcxb.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/kengarags/annki.html
@@ -17536,7 +17538,6 @@ https://www.ss.lv/msg/lv/real-estate/flats/riga/tornjakalns/cnnbc.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/mangali/bobnfx.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/maskavas-priekshpilseta/agipo.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/shampeteris-pleskodale/amhkm.html
-https://www.ss.lv/msg/lv/real-estate/flats/riga/imanta/gjgii.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/centre/acgfk.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/sarkandaugava/afiko.html
 https://www.ss.lv/msg/lv/real-estate/flats/riga/yugla/ciipl.html
