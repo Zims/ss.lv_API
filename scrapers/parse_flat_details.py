@@ -1,11 +1,13 @@
 import requests
 from lxml import etree
 import time
-import datetime
+from datetime import datetime
 import sqlite3
 import random
 from read_sitemap import LinkCollector
 
+# Link collector has a method to read sitemap.xml 
+# and return a list of links
 link_collector = LinkCollector()
 link_collector.check_sitemap()
 link_collector.collector_property_links()
@@ -14,23 +16,25 @@ print(f'{len(individual_property_links)} links collected from ss.lv')
 
 new_individual_property_links = []
 # define connection to database and create cursor
-conn = sqlite3.connect('ss_all_new_dates.sqlite3')
+conn = sqlite3.connect('ss_all.sqlite3')
 cur = conn.cursor()
 
-# read all links from database ss_all.sqlite3 all urls
+# # read all links from database ss_all.sqlite3 all urls
+# to check what is in the database already
 cur.execute('''SELECT url FROM ss_all''')
 all_urls = cur.fetchall()
 
-# create a list of all urls
+# create a list of all urls in database
 all_db_urls_list = []
 for url in all_urls:
     all_db_urls_list.append(url[0])
 print(f'{len(all_db_urls_list)} links collected from db')
 
 # compare all urls from database with all urls from sitemap using the set() function
+# and create a list of new urls only
 new_individual_property_links = list(
     set(individual_property_links) - set(all_db_urls_list))
-# new_individual_property_links = individual_property_links
+
 
 print(f'{len(new_individual_property_links)} new links collected')
 
@@ -60,7 +64,8 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOI
                                                             price INTEGER,
                                                             tx_type TEXT,
                                                             date_added DATE,
-                                                            url TEXT
+                                                            url TEXT,
+                                                            added_to_db DATE
                                                             )'''
 cur.execute(write_to_db)
 
@@ -141,12 +146,14 @@ def detail_parser(url):
     except:
         date_added = None
     
+    # create date from datetime.now()
+    added_to_db = datetime.now().strftime('%Y-%m-%d')
     # Write to db
     def db_query():
         cur.execute('''INSERT INTO ss_all
-                    (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url)
-                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                    (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url,))
+                    (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,added_to_db)
+                    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+                    (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url, added_to_db,))
         conn.commit()
 
     db_query()
