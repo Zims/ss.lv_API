@@ -1,3 +1,4 @@
+from itertools import count
 import requests
 from lxml import etree
 import time
@@ -5,6 +6,7 @@ from datetime import datetime
 import sqlite3
 import random
 from read_sitemap import LinkCollector
+import threading
 
 # Link collector has a method to read sitemap.xml 
 # and return a list of links
@@ -16,7 +18,7 @@ print(f'{len(individual_property_links)} links collected from ss.lv')
 
 new_individual_property_links = []
 # define connection to database and create cursor
-conn = sqlite3.connect('ss_all.sqlite3')
+conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
 cur = conn.cursor()
 
 # # read all links from database ss_all.sqlite3 all urls
@@ -159,7 +161,7 @@ def detail_parser(url):
     db_query()
 
 def remove_old_records():
-    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-11 month')''')
+    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-2 month')''')
     # delete records where date_added is null
     cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
     print(f'{cur.rowcount} records deleted')
@@ -167,11 +169,14 @@ def remove_old_records():
 
 remove_old_records()
 
+count = 0
 for url in new_individual_property_links:
-    detail_parser(url.strip())
-    # print url index
-    print(individual_property_links.index(url))
-    time.sleep(0.1)
+    # make detail_parser function call multthreaded
+    t = threading.Thread(target=detail_parser, args=(url,),)
+    t.start()
+    count += 1
+    print(f'{count}/{len(new_individual_property_links)}')
+    time.sleep(0.07)
 
 remove_old_records()
 

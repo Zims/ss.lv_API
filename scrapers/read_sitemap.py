@@ -44,6 +44,6 @@ class LinkCollector:
 
     # write to txt file
     def save_to_file(self):
-        with open("ss_appartments.txt", "w") as f:
+        with open("scrapers/ss_appartments.txt", "w") as f:
             for property in self.individual_property:
                 f.write(property.strip() + "\n")
