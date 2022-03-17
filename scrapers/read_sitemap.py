@@ -36,7 +36,7 @@ class LinkCollector:
                     global individual_property
                     self.individual_property.append(line)
             time.sleep(0.1)
-            print("Collecting links from each 'https://www.ss.lv/site_map/sitemap.msg.real-estate'. Sleeping for 0.1 seconds")
+            print("Collecting links from each 'https://www.ss.lv/msg/lv/real-estate/flats/riga/'. Sleeping for 0.1 seconds")
         # print(len(self.individual_property))
         with open("ss_appartments.txt", "w") as f:
             for property in self.individual_property:

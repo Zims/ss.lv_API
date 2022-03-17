@@ -101,6 +101,76 @@ def detail_parser(url):
         rajons = root.xpath('//td[@id="tdo_856"]/b/text()')[0]
     except:
         rajons = None
+    if rajons == "centrs":
+        rajons = "centre"
+    elif rajons == "Šampēteris-Pleskodāle":
+        rajons = "sampeteris"
+    elif rajons == "Pļavnieki":
+        rajons = "plavnieki"
+    elif rajons == "Mežciems":
+        rajons = "mezciems"
+    elif rajons == "Pļavnieki":
+        rajons = "plavnieki"
+    elif rajons == "Iļģuciems":
+        rajons = "ilguciems"
+    elif rajons == "Āgenskalns":
+        rajons = "agenskalns"
+    elif rajons == "Šķirotava":
+        rajons = "skjirotava"
+    elif rajons == "Ķīpsala":
+        rajons = "kipsala"
+    elif rajons == "Ķengarags":
+        rajons = "kengarags"
+    elif rajons == "Čiekurkalns":
+        rajons = "ciekurkalns"
+    elif rajons == "Zolitūde":
+        rajons = "zolitude"
+    elif rajons == "Ziepniekkalns":
+        rajons = "ziepniekkalns"
+    elif rajons == "Vecāķi":
+        rajons = "vecaaki"
+    elif rajons == "Vecrīga":
+        rajons = "vecriga"
+    elif rajons == "Vecmīlgrāvis":
+        rajons = "vecmilgravis"
+    elif rajons == "Torņakalns":
+        rajons = "tornakalns"
+    elif rajons == "Berģi":
+        rajons = "bergi"
+    elif rajons == "Dzegužkalns":
+        rajons = "dzeguzkalns"
+    elif rajons == "Bolderāja":
+        rajons = "bolderaja"
+    elif rajons == "Maskavas priekšpilsēta":
+        rajons = "maskavas"
+    elif rajons == "Krasta r-ns":
+        rajons = "krasta"
+    elif rajons == "Grīziņkalns":
+        rajons = "grizinakalns"
+    elif rajons == "Mežaparks":
+        rajons = "mezaparks"
+    elif rajons == "Mangaļi":
+        rajons = "mangali"
+    elif rajons == "Daugavgrīva":
+        rajons = "daugavgriva"
+    elif rajons == "Bieriņi":
+        rajons = "bierini"
+    elif rajons == "Jaunmīlgrāvis":
+        rajons = "jaunmilgravis"
+    elif rajons == "Beberbeķi":
+        rajons = "beberbeki"
+    elif rajons == "Kundziņsala":
+        rajons = "kundzinsala"
+    elif rajons == "Dreiliņi":
+        rajons = "dreilini"
+    elif rajons == "Mangaļsala":
+        rajons = "mangalsala"
+    else:
+        try:
+            rajons = rajons.lower()
+        except:
+            rajons = rajons
+
     try:
         street = root.xpath('//td[@id="tdo_11"]/b/text()')[0]
     except:
@@ -161,7 +231,8 @@ def detail_parser(url):
     db_query()
 
 def remove_old_records():
-    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-2 month')''')
+    # remove old records from db older than 30 days
+    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-20 days')''')
     # delete records where date_added is null
     cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
     print(f'{cur.rowcount} records deleted')
@@ -179,7 +250,6 @@ for url in new_individual_property_links:
     time.sleep(0.07)
 
 remove_old_records()
-
 todays_date = datetime.now().strftime('%Y-%m-%d')
 # get all records date_added    from db from today
 cur.execute('''SELECT date_added FROM ss_all WHERE date_added = ?''', (todays_date,))
