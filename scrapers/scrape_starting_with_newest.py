@@ -5,41 +5,29 @@ import time
 from datetime import datetime
 import sqlite3
 import random
-from read_sitemap import LinkCollector
 import threading
+from bs4 import BeautifulSoup
 
-# Link collector has a method to read sitemap.xml 
-# and return a list of links
-link_collector = LinkCollector()
-link_collector.check_sitemap()
-link_collector.collector_property_links()
-individual_property_links = link_collector.individual_property
-print(f'{len(individual_property_links)} links collected from ss.lv')
+url_collector = []
 
-new_individual_property_links = []
-# define connection to database and create cursor
+def get_one_page(page_nr):
+    response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
+    print(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
+    print(page_nr)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    items = soup.select('form', id_='filter_frm')[0].select('table')[2].select('tr')
+    for item in items:
+        try:
+            extracted_url = f"https://www.ss.lv/{item.select('a')[0].get('href')}"
+        except:
+            continue
+        global url_collector
+        url_collector.append(extracted_url)
+
+
 conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
 cur = conn.cursor()
 
-# # read all links from database ss_all.sqlite3 all urls
-# to check what is in the database already
-cur.execute('''SELECT url FROM ss_all''')
-all_urls = cur.fetchall()
-
-# create a list of all urls in database
-all_db_urls_list = []
-for url in all_urls:
-    all_db_urls_list.append(url[0])
-print(f'{len(all_db_urls_list)} links collected from db')
-
-# # compare all urls from database with all urls from sitemap using the set() function
-# # and create a list of new urls only
-new_individual_property_links = list(
-    set(individual_property_links) - set(all_db_urls_list))
-# new_individual_property_links = individual_property_links
-print(f'{len(new_individual_property_links)} new links collected')
-
-# print(f'{len(new_individual_property_links)} new links collected')
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -52,7 +40,7 @@ user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
 ]
 
-write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all (id INTEGER PRIMARY KEY AUTOINCREMENT,
+write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
                                                             description TEXT,
                                                             city TEXT,
                                                             rajons TEXT,
@@ -222,7 +210,7 @@ def detail_parser(url):
     added_to_db = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Write to db
     def db_query():
-        cur.execute('''INSERT INTO ss_all
+        cur.execute('''INSERT INTO ss_all_new
                     (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,added_to_db)
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
                     (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url, added_to_db,))
@@ -230,30 +218,13 @@ def detail_parser(url):
 
     db_query()
 
-def remove_old_records():
-    # remove old records from db older than 30 days
-    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-20 days')''')
-    cur.execute('''DELETE FROM ss_all WHERE date_added > date('now','+1 days')''')
+for i in range(1,100):
+    get_one_page(i)
+    print('Page ' + str(i) + ' done')
+    print(len(url_collector))
 
-    # delete records where date_added is null
-    cur.execute('''DELETE FROM ss_all WHERE date_added IS NULL''')
-    print(f'{cur.rowcount} records deleted')
-    conn.commit()
-
-remove_old_records()
-
-count = 0
-for url in new_individual_property_links:
-    # make detail_parser function call multthreaded
+for url in url_collector:
+    print(url)
     t = threading.Thread(target=detail_parser, args=(url,),)
     t.start()
-    count += 1
-    print(f'{count}/{len(new_individual_property_links)}')
-    time.sleep(0.07)
-
-remove_old_records()
-todays_date = datetime.now().strftime('%Y-%m-%d')
-# get all records date_added    from db from today
-cur.execute('''SELECT date_added FROM ss_all WHERE date_added = ?''', (todays_date,))
-all_urls = cur.fetchall()
-print(f'{len(all_urls)} records for today')
+    time.sleep(0.2)

@@ -40,7 +40,6 @@ async def places(request: Request):
     rajons = [row[0] for row in c.fetchall()]
     return rajons
 
-    return 
 @app.get("/{place:str}")
 def get_place(place):
     if place == "all":
