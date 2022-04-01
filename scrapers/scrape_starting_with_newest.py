@@ -10,10 +10,9 @@ from bs4 import BeautifulSoup
 
 url_collector = []
 db_urls = []
+
 def get_one_page(page_nr):
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
-    print(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
-    print(page_nr)
     soup = BeautifulSoup(response.text, 'html.parser')
     items = soup.select('form', id_='filter_frm')[0].select('table')[2].select('tr')
     for item in items:
@@ -32,6 +31,9 @@ def fetch_all_db():
     cur.execute('''SELECT url FROM ss_all_new''')
     rows = cur.fetchall()
     cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-12 month')''')
+    print(f'{cur.rowcount} records deleted')
+    conn.commit()
+
 
     for row in rows:
         global db_urls
@@ -236,7 +238,7 @@ def detail_parser(url):
     db_query()
 
 
-for i in range(1,100):
+for i in range(1,15):
     get_one_page(i)
     print('Page ' + str(i) + ' done')
 
