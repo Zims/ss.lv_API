@@ -9,7 +9,7 @@ import threading
 from bs4 import BeautifulSoup
 
 url_collector = []
-
+db_urls = []
 def get_one_page(page_nr):
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
     print(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
@@ -24,9 +24,25 @@ def get_one_page(page_nr):
         global url_collector
         url_collector.append(extracted_url)
 
-
 conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
 cur = conn.cursor()
+
+def fetch_all_db():
+    # fetch all descriptions from db
+    cur.execute('''SELECT url FROM ss_all_new''')
+    rows = cur.fetchall()
+    cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-12 month')''')
+
+    for row in rows:
+        global db_urls
+        db_urls.append(row[0])
+    return rows
+
+try:
+    fetch_all_db()
+except:
+    print('No db found')
+existing_urls = db_urls
 
 
 user_agents = [
@@ -59,7 +75,6 @@ write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY A
                                                             added_to_db TIMESTAMP
                                                             )'''
 cur.execute(write_to_db)
-
 
 def detail_parser(url):
     try:
@@ -210,6 +225,8 @@ def detail_parser(url):
     added_to_db = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Write to db
     def db_query():
+        # check if record exists in db then pass
+            
         cur.execute('''INSERT INTO ss_all_new
                     (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,added_to_db)
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
@@ -218,13 +235,16 @@ def detail_parser(url):
 
     db_query()
 
+
 for i in range(1,100):
     get_one_page(i)
     print('Page ' + str(i) + ' done')
-    print(len(url_collector))
 
 for url in url_collector:
-    print(url)
-    t = threading.Thread(target=detail_parser, args=(url,),)
-    t.start()
-    time.sleep(0.2)
+    if url in existing_urls:
+        print("Already in db")
+    else:
+        print(url)
+        t = threading.Thread(target=detail_parser, args=(url,),)
+        t.start()
+        time.sleep(0.07)
