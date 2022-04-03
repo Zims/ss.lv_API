@@ -275,6 +275,8 @@ while True:
 
     if counter % 1000 == 0:
         running_update(100)
+    elif counter % 100 == 0:
+        running_update(20)
     else:
         running_update(3)
     counter += 1
