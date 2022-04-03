@@ -1,4 +1,3 @@
-
 from itertools import count
 import requests
 from lxml import etree
@@ -11,7 +10,6 @@ from bs4 import BeautifulSoup
 
 url_collector = []
 db_urls = []
-counter = 999
 
 def get_one_page(page_nr):
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
@@ -40,6 +38,11 @@ def fetch_all_db():
         db_urls.append(row[0])
     return rows
 
+try:
+    fetch_all_db()
+except:
+    print('No db found')
+
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -55,7 +58,7 @@ user_agents = [
 write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
                                                             description TEXT,
                                                             city TEXT,
-                                                            district TEXT,
+                                                            rajons TEXT,
                                                             street TEXT,
                                                             rooms INTEGER,
                                                             size INTEGER,
@@ -97,78 +100,78 @@ def detail_parser(url):
     except:
         city = None
     try:
-        district = root.xpath('//td[@id="tdo_856"]/b/text()')[0]
+        rajons = root.xpath('//td[@id="tdo_856"]/b/text()')[0]
     except:
-        district = None
-    if district == "centrs":
-        district = "centre"
-    elif district == "Šampēteris-Pleskodāle":
-        district = "sampeteris"
-    elif district == "Pļavnieki":
-        district = "plavnieki"
-    elif district == "Mežciems":
-        district = "mezciems"
-    elif district == "Pļavnieki":
-        district = "plavnieki"
-    elif district == "Iļģuciems":
-        district = "ilguciems"
-    elif district == "Āgenskalns":
-        district = "agenskalns"
-    elif district == "Šķirotava":
-        district = "skjirotava"
-    elif district == "Ķīpsala":
-        district = "kipsala"
-    elif district == "Ķengarags":
-        district = "kengarags"
-    elif district == "Čiekurkalns":
-        district = "ciekurkalns"
-    elif district == "Zolitūde":
-        district = "zolitude"
-    elif district == "Ziepniekkalns":
-        district = "ziepniekkalns"
-    elif district == "Vecāķi":
-        district = "vecaaki"
-    elif district == "Vecrīga":
-        district = "vecriga"
-    elif district == "Vecmīlgrāvis":
-        district = "vecmilgravis"
-    elif district == "Torņakalns":
-        district = "tornakalns"
-    elif district == "Berģi":
-        district = "bergi"
-    elif district == "Dzegužkalns":
-        district = "dzeguzkalns"
-    elif district == "Bolderāja":
-        district = "bolderaja"
-    elif district == "Maskavas priekšpilsēta":
-        district = "maskavas"
-    elif district == "Krasta r-ns":
-        district = "krasta"
-    elif district == "Grīziņkalns":
-        district = "grizinakalns"
-    elif district == "Mežaparks":
-        district = "mezaparks"
-    elif district == "Mangaļi":
-        district = "mangali"
-    elif district == "Daugavgrīva":
-        district = "daugavgriva"
-    elif district == "Bieriņi":
-        district = "bierini"
-    elif district == "Jaunmīlgrāvis":
-        district = "jaunmilgravis"
-    elif district == "Beberbeķi":
-        district = "beberbeki"
-    elif district == "Kundziņsala":
-        district = "kundzinsala"
-    elif district == "Dreiliņi":
-        district = "dreilini"
-    elif district == "Mangaļsala":
-        district = "mangalsala"
+        rajons = None
+    if rajons == "centrs":
+        rajons = "centre"
+    elif rajons == "Šampēteris-Pleskodāle":
+        rajons = "sampeteris"
+    elif rajons == "Pļavnieki":
+        rajons = "plavnieki"
+    elif rajons == "Mežciems":
+        rajons = "mezciems"
+    elif rajons == "Pļavnieki":
+        rajons = "plavnieki"
+    elif rajons == "Iļģuciems":
+        rajons = "ilguciems"
+    elif rajons == "Āgenskalns":
+        rajons = "agenskalns"
+    elif rajons == "Šķirotava":
+        rajons = "skjirotava"
+    elif rajons == "Ķīpsala":
+        rajons = "kipsala"
+    elif rajons == "Ķengarags":
+        rajons = "kengarags"
+    elif rajons == "Čiekurkalns":
+        rajons = "ciekurkalns"
+    elif rajons == "Zolitūde":
+        rajons = "zolitude"
+    elif rajons == "Ziepniekkalns":
+        rajons = "ziepniekkalns"
+    elif rajons == "Vecāķi":
+        rajons = "vecaaki"
+    elif rajons == "Vecrīga":
+        rajons = "vecriga"
+    elif rajons == "Vecmīlgrāvis":
+        rajons = "vecmilgravis"
+    elif rajons == "Torņakalns":
+        rajons = "tornakalns"
+    elif rajons == "Berģi":
+        rajons = "bergi"
+    elif rajons == "Dzegužkalns":
+        rajons = "dzeguzkalns"
+    elif rajons == "Bolderāja":
+        rajons = "bolderaja"
+    elif rajons == "Maskavas priekšpilsēta":
+        rajons = "maskavas"
+    elif rajons == "Krasta r-ns":
+        rajons = "krasta"
+    elif rajons == "Grīziņkalns":
+        rajons = "grizinakalns"
+    elif rajons == "Mežaparks":
+        rajons = "mezaparks"
+    elif rajons == "Mangaļi":
+        rajons = "mangali"
+    elif rajons == "Daugavgrīva":
+        rajons = "daugavgriva"
+    elif rajons == "Bieriņi":
+        rajons = "bierini"
+    elif rajons == "Jaunmīlgrāvis":
+        rajons = "jaunmilgravis"
+    elif rajons == "Beberbeķi":
+        rajons = "beberbeki"
+    elif rajons == "Kundziņsala":
+        rajons = "kundzinsala"
+    elif rajons == "Dreiliņi":
+        rajons = "dreilini"
+    elif rajons == "Mangaļsala":
+        rajons = "mangalsala"
     else:
         try:
-            district = district.lower()
+            rajons = rajons.lower()
         except:
-            district = district
+            rajons = rajons
 
     try:
         street = root.xpath('//td[@id="tdo_11"]/b/text()')[0]
@@ -224,19 +227,33 @@ def detail_parser(url):
         # check if record exists in db then pass
             
         cur.execute('''INSERT INTO ss_all_new
-                    (description,city,district,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,added_to_db)
+                    (description,city,rajons,street,rooms,size,floor,max_floor,series,item_type,extras,price,tx_type,date_added,url,added_to_db)
                     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                    (description, city, district, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url, added_to_db,))
+                    (description, city, rajons, street, rooms, size, floor, max_floor, series, item_type, extras, price, tx_type, date_added, url, added_to_db,))
         conn.commit()
 
     db_query()
 
-def running_update(page_count):
-    for i in range(1,page_count):
+def todays_results():
+    try:
+        todays_date = datetime.now().strftime('%Y-%m-%d')
+        cur.execute('''SELECT date_added FROM ss_all_new WHERE date_added = ?''', (todays_date,))
+        all_urls = cur.fetchall()
+        print(f'{len(all_urls)} records for today')
+    except:
+        pass
+
+while True:
+    for i in range(1,10):
         get_one_page(i)
         print('Page ' + str(i) + ' done')
-
     for url in url_collector:
+
+        try:
+            fetch_all_db()
+        except:
+            print('No db found')
+
         if url in db_urls:
             print("Already in db")
         else:
@@ -244,41 +261,6 @@ def running_update(page_count):
             t = threading.Thread(target=detail_parser, args=(url,),)
             t.start()
             time.sleep(0.07)
-    try:
-        todays_date = datetime.now().strftime('%Y-%m-%d')
-        cur.execute('''SELECT date_added FROM ss_all_new WHERE date_added = ?''', (todays_date,))
-        all_urls = cur.fetchall()
-        print(f'{len(all_urls)} records for today')
-    except:
-        print('No records for today')
-
-def remove_old_records():
-    try:
-        # remove old records from db older than 30 days
-        cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-300 days')''')
-        conn.commit()
-        cur.execute('''DELETE FROM ss_all_new WHERE date_added > date('now','+1 days')''')
-        conn.commit()
-        # delete records where date_added is null
-        # cur.execute('''DELETE FROM ss_all_new WHERE date_added IS NULL''')
-        # print(f'{cur.rowcount} records deleted')
-        # conn.commit()
-    except:
-        print('No records to delete')
-
-
-while True:
-    try:
-        fetch_all_db()
-    except:
-        print('No db found')
-
-    if counter % 1000 == 0:
-        running_update(100)
-    else:
-        running_update(3)
-    counter += 1
-    print(f"Counter is at {counter}")
     db_urls = []
-    remove_old_records()
+    todays_results()
     time.sleep(60)
