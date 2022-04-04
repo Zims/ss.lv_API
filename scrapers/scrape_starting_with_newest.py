@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 url_collector = []
 db_urls = []
-counter = 999
+counter = 99
 
 def get_one_page(page_nr):
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
@@ -29,16 +29,18 @@ conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
 cur = conn.cursor()
 
 def fetch_all_db():
-    # fetch all descriptions from db
-    cur.execute('''SELECT url FROM ss_all_new''')
-    rows = cur.fetchall()
-    # cur.execute('''DELETE FROM ss_all WHERE date_added < date('now','-12 month')''')
-    # print(f'{cur.rowcount} records deleted')
-    # conn.commit()
-    for row in rows:
-        global db_urls
-        db_urls.append(row[0])
-    return rows
+    try:
+        # fetch all urls from db
+        cur.execute('''SELECT url FROM ss_all_new''')
+        rows = cur.fetchall()
+
+        # create list of all urls in db
+        for row in rows:
+            global db_urls
+            db_urls.append(row[0])
+        return rows
+    except:
+        print('No records in db')
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -246,13 +248,7 @@ def running_update(page_count):
             t = threading.Thread(target=detail_parser, args=(url,),)
             t.start()
             time.sleep(0.07)
-    try:
-        todays_date = datetime.now().strftime('%Y-%m-%d')
-        cur.execute('''SELECT date_added FROM ss_all_new WHERE date_added = ?''', (todays_date,))
-        all_urls = cur.fetchall()
-        print(f'{len(all_urls)} records for today')
-    except:
-        print('No records for today')
+
 
 def remove_old_records():
     try:
@@ -268,25 +264,38 @@ def remove_old_records():
     except:
         print('No records to delete')
 
+def delete_duplicate_records():
+        cur.execute('''SELECT url,count(*) FROM ss_all_new GROUP BY url HAVING count(*) > 1''')
+        duplicates = cur.fetchall()
+        for duplicate in duplicates:
+            cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (duplicate[0],))
+            conn.commit()
+            print(f'{duplicate[0]} deleted')
+
+def get_count_today():
+    try:
+        todays_date = datetime.now().strftime('%Y-%m-%d')
+        cur.execute('''SELECT date_added FROM ss_all_new WHERE date_added = ?''', (todays_date,))
+        all_urls = cur.fetchall()
+        print(f'{len(all_urls)} records for today')
+    except:
+        print('No records for today')
 
 while True:
     create_db()
-    try:
-        fetch_all_db()
-    except:
-        print('No db found')
-    
+    fetch_all_db()
+
     if counter % 1000 == 0:
         running_update(100)
+        delete_duplicate_records()
     elif counter % 100 == 0:
-        # delete all records from db where date_added is today
-        todays_date = datetime.now().strftime('%Y-%m-%d')
-        cur.execute('''DELETE FROM ss_all_new WHERE date_added = ?''', (todays_date,))
-        conn.commit()
         running_update(20)
+        delete_duplicate_records()
     else:
-        running_update(4)
+        running_update(8)
+        delete_duplicate_records()
     counter += 1
+    get_count_today()
     print(f"Counter is at {counter}")
     db_urls = []
     remove_old_records()
