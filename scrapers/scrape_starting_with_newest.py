@@ -51,25 +51,28 @@ user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
 ]
 
-write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                            description TEXT,
-                                                            city TEXT,
-                                                            district TEXT,
-                                                            street TEXT,
-                                                            rooms INTEGER,
-                                                            size INTEGER,
-                                                            floor INTEGER,
-                                                            max_floor INTEGER,
-                                                            series TEXT,
-                                                            item_type TEXT,
-                                                            extras TEXT,
-                                                            price INTEGER,
-                                                            tx_type TEXT,
-                                                            date_added DATE,
-                                                            url TEXT,
-                                                            added_to_db TIMESTAMP
-                                                            )'''
-cur.execute(write_to_db)
+def create_db():
+    write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                                description TEXT,
+                                                                city TEXT,
+                                                                district TEXT,
+                                                                street TEXT,
+                                                                rooms INTEGER,
+                                                                size INTEGER,
+                                                                floor INTEGER,
+                                                                max_floor INTEGER,
+                                                                series TEXT,
+                                                                item_type TEXT,
+                                                                extras TEXT,
+                                                                price INTEGER,
+                                                                tx_type TEXT,
+                                                                date_added DATE,
+                                                                url TEXT,
+                                                                added_to_db TIMESTAMP
+                                                                )'''
+    cur.execute(write_to_db)
+
+create_db()
 
 def detail_parser(url):
     try:
@@ -253,7 +256,7 @@ def running_update(page_count):
 
 def remove_old_records():
     try:
-        # remove old records from db older than 30 days
+        # remove old records from db older than 300 days
         cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-300 days')''')
         conn.commit()
         cur.execute('''DELETE FROM ss_all_new WHERE date_added > date('now','+1 days')''')
@@ -267,6 +270,7 @@ def remove_old_records():
 
 
 while True:
+    create_db()
     try:
         fetch_all_db()
     except:
@@ -275,9 +279,13 @@ while True:
     if counter % 1000 == 0:
         running_update(100)
     elif counter % 100 == 0:
+        # delete all records from db where date_added is today
+        todays_date = datetime.now().strftime('%Y-%m-%d')
+        cur.execute('''DELETE FROM ss_all_new WHERE date_added = ?''', (todays_date,))
+        conn.commit()
         running_update(20)
     else:
-        running_update(3)
+        running_update(4)
     counter += 1
     print(f"Counter is at {counter}")
     db_urls = []

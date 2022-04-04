@@ -62,7 +62,7 @@ async def district(request: Request, district: str, end_date: str):
 def get_place(place):
     if place == "top100":
         # select only top 100 newest records
-        c.execute("SELECT * FROM ss_all_new ORDER BY date_added DESC LIMIT 100")
+        c.execute("SELECT * FROM ss_all_new ORDER BY added_to_db DESC LIMIT 100")
         top100 = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
         return top100
     # elif place == "all":
