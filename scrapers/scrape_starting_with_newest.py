@@ -40,7 +40,6 @@ def fetch_all_db():
         db_urls.append(row[0])
     return rows
 
-
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -272,15 +271,17 @@ while True:
         fetch_all_db()
     except:
         print('No db found')
-
-    if counter % 1000 == 0:
-        running_update(100)
-    elif counter % 100 == 0:
-        running_update(20)
-    else:
-        running_update(3)
-    counter += 1
-    print(f"Counter is at {counter}")
-    db_urls = []
-    remove_old_records()
+    try:
+        if counter % 1000 == 0:
+            running_update(100)
+        elif counter % 100 == 0:
+            running_update(20)
+        else:
+            running_update(3)
+        counter += 1
+        print(f"Counter is at {counter}")
+        db_urls = []
+        remove_old_records()
+    except:
+        print('Error')
     time.sleep(60)
