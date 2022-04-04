@@ -54,25 +54,28 @@ def fetch_all_db():
         print('No records in db')
 
 def create_db():
-    write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                                description TEXT,
-                                                                city TEXT,
-                                                                district TEXT,
-                                                                street TEXT,
-                                                                rooms INTEGER,
-                                                                size INTEGER,
-                                                                floor INTEGER,
-                                                                max_floor INTEGER,
-                                                                series TEXT,
-                                                                item_type TEXT,
-                                                                extras TEXT,
-                                                                price INTEGER,
-                                                                tx_type TEXT,
-                                                                date_added DATE,
-                                                                url TEXT,
-                                                                added_to_db TIMESTAMP
-                                                                )'''
-    cur.execute(write_to_db)
+    try:
+        write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                                                    description TEXT,
+                                                                    city TEXT,
+                                                                    district TEXT,
+                                                                    street TEXT,
+                                                                    rooms INTEGER,
+                                                                    size INTEGER,
+                                                                    floor INTEGER,
+                                                                    max_floor INTEGER,
+                                                                    series TEXT,
+                                                                    item_type TEXT,
+                                                                    extras TEXT,
+                                                                    price INTEGER,
+                                                                    tx_type TEXT,
+                                                                    date_added DATE,
+                                                                    url TEXT,
+                                                                    added_to_db TIMESTAMP
+                                                                    )'''
+        cur.execute(write_to_db)
+    except:
+        print('Error creating db')
 
 def detail_parser(url):
     try:
@@ -234,18 +237,21 @@ def detail_parser(url):
     db_query()
 
 def running_update(page_count):
-    for i in range(1,page_count):
-        get_one_page(i)
-        print('Page ' + str(i) + ' done')
+    try:
+        for i in range(1,page_count):
+            get_one_page(i)
+            print('Page ' + str(i) + ' done')
 
-    for url in url_collector:
-        if url in db_urls:
-            print("Already in db")
-        else:
-            print(url)
-            t = threading.Thread(target=detail_parser, args=(url,),)
-            t.start()
-            time.sleep(0.07)
+        for url in url_collector:
+            if url in db_urls:
+                print("Already in db")
+            else:
+                print(url)
+                t = threading.Thread(target=detail_parser, args=(url,),)
+                t.start()
+                time.sleep(0.07)
+    except:
+        print("Error")
 
 def remove_old_records():
     try:
@@ -259,12 +265,15 @@ def remove_old_records():
         print('No records to delete')
 
 def delete_duplicate_records():
+    try:
         cur.execute('''SELECT url,count(*) FROM ss_all_new GROUP BY url HAVING count(*) > 1''')
         duplicates = cur.fetchall()
         for duplicate in duplicates:
             cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (duplicate[0],))
             conn.commit()
             print(f'{duplicate[0]} deleted')
+    except:
+        print('No duplicates to delete')
 
 def get_count_today():
     try:
