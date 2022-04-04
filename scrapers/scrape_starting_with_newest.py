@@ -11,7 +11,21 @@ from bs4 import BeautifulSoup
 
 url_collector = []
 db_urls = []
-counter = 99
+counter = 999
+
+user_agents = [
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
+]
+
+conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
+cur = conn.cursor()
 
 def get_one_page(page_nr):
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
@@ -24,9 +38,6 @@ def get_one_page(page_nr):
             continue
         global url_collector
         url_collector.append(extracted_url)
-
-conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
-cur = conn.cursor()
 
 def fetch_all_db():
     try:
@@ -41,17 +52,6 @@ def fetch_all_db():
         return rows
     except:
         print('No records in db')
-
-user_agents = [
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14',
-    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
-    'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
-]
 
 def create_db():
     write_to_db = '''CREATE TABLE IF NOT EXISTS ss_all_new (id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -73,8 +73,6 @@ def create_db():
                                                                 added_to_db TIMESTAMP
                                                                 )'''
     cur.execute(write_to_db)
-
-create_db()
 
 def detail_parser(url):
     try:
@@ -249,18 +247,14 @@ def running_update(page_count):
             t.start()
             time.sleep(0.07)
 
-
 def remove_old_records():
     try:
         # remove old records from db older than 300 days
         cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-300 days')''')
         conn.commit()
+        # remove broken records from db younger then a day
         cur.execute('''DELETE FROM ss_all_new WHERE date_added > date('now','+1 days')''')
         conn.commit()
-        # delete records where date_added is null
-        # cur.execute('''DELETE FROM ss_all_new WHERE date_added IS NULL''')
-        # print(f'{cur.rowcount} records deleted')
-        # conn.commit()
     except:
         print('No records to delete')
 
