@@ -271,17 +271,15 @@ while True:
         fetch_all_db()
     except:
         print('No db found')
-    try:
-        if counter % 1000 == 0:
-            running_update(100)
-        elif counter % 100 == 0:
-            running_update(20)
-        else:
-            running_update(3)
-        counter += 1
-        print(f"Counter is at {counter}")
-        db_urls = []
-        remove_old_records()
-    except:
-        print('Error')
+    
+    if counter % 1000 == 0:
+        running_update(100)
+    elif counter % 100 == 0:
+        running_update(20)
+    else:
+        running_update(3)
+    counter += 1
+    print(f"Counter is at {counter}")
+    db_urls = []
+    remove_old_records()
     time.sleep(60)
