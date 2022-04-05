@@ -28,16 +28,19 @@ conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
 cur = conn.cursor()
 
 def get_one_page(page_nr):
+
     response = requests.get(f'https://www.ss.lv/lv/real-estate/flats/riga/all/page{page_nr}.html')
     soup = BeautifulSoup(response.text, 'html.parser')
     items = soup.select('form', id_='filter_frm')[0].select('table')[2].select('tr')
+    
     for item in items:
         try:
-            extracted_url = f"https://www.ss.lv/{item.select('a')[0].get('href')}"
+            extracted_url = f"https://www.ss.lv{item.select('a')[0].get('href')}"
         except:
             continue
         global url_collector
-        url_collector.append(extracted_url)
+        if extracted_url not in url_collector:
+            url_collector.append(extracted_url)
 
 def fetch_all_db():
     try:
@@ -101,74 +104,11 @@ def detail_parser(url):
         city = root.xpath('//td[@id="tdo_20"]/b/text()')[0]
     except:
         city = None
+
     try:
-        district = root.xpath('//td[@id="tdo_856"]/b/text()')[0]
+        district = url.split('/')[-2].replace('-', '_')
     except:
-        district = None
-    if district == "centrs":
-        district = "centre"
-    elif district == "Šampēteris-Pleskodāle":
-        district = "sampeteris"
-    elif district == "Pļavnieki":
-        district = "plavnieki"
-    elif district == "Mežciems":
-        district = "mezciems"
-    elif district == "Pļavnieki":
-        district = "plavnieki"
-    elif district == "Iļģuciems":
-        district = "ilguciems"
-    elif district == "Āgenskalns":
-        district = "agenskalns"
-    elif district == "Šķirotava":
-        district = "skjirotava"
-    elif district == "Ķīpsala":
-        district = "kipsala"
-    elif district == "Ķengarags":
-        district = "kengarags"
-    elif district == "Čiekurkalns":
-        district = "ciekurkalns"
-    elif district == "Zolitūde":
-        district = "zolitude"
-    elif district == "Ziepniekkalns":
-        district = "ziepniekkalns"
-    elif district == "Vecāķi":
-        district = "vecaaki"
-    elif district == "Vecrīga":
-        district = "vecriga"
-    elif district == "Vecmīlgrāvis":
-        district = "vecmilgravis"
-    elif district == "Torņakalns":
-        district = "tornakalns"
-    elif district == "Berģi":
-        district = "bergi"
-    elif district == "Dzegužkalns":
-        district = "dzeguzkalns"
-    elif district == "Bolderāja":
-        district = "bolderaja"
-    elif district == "Maskavas priekšpilsēta":
-        district = "maskavas"
-    elif district == "Krasta r-ns":
-        district = "krasta"
-    elif district == "Grīziņkalns":
-        district = "grizinakalns"
-    elif district == "Mežaparks":
-        district = "mezaparks"
-    elif district == "Mangaļi":
-        district = "mangali"
-    elif district == "Daugavgrīva":
-        district = "daugavgriva"
-    elif district == "Bieriņi":
-        district = "bierini"
-    elif district == "Jaunmīlgrāvis":
-        district = "jaunmilgravis"
-    elif district == "Beberbeķi":
-        district = "beberbeki"
-    elif district == "Kundziņsala":
-        district = "kundzinsala"
-    elif district == "Dreiliņi":
-        district = "dreilini"
-    elif district == "Mangaļsala":
-        district = "mangalsala"
+       district = None
     else:
         try:
             district = district.lower()
@@ -241,6 +181,7 @@ def running_update(page_count):
         for i in range(1,page_count):
             get_one_page(i)
             print('Page ' + str(i) + ' done')
+            time.sleep(0.15)
 
         for url in url_collector:
             if url in db_urls:
@@ -249,7 +190,7 @@ def running_update(page_count):
                 print(url)
                 t = threading.Thread(target=detail_parser, args=(url,),)
                 t.start()
-                time.sleep(0.07)
+                time.sleep(0.1)
     except:
         print("Error")
 
@@ -304,16 +245,19 @@ while True:
     fetch_all_db()
 
     if counter % 600 == 0:
-        running_update(100)
+        running_update(120)
+        delete_duplicate_records()
+
     elif counter % 60 == 0:
         running_update(20)
+        delete_duplicate_records()
+
     else:
         running_update(6)
     
     db_urls = []
     counter += 1
     
-    delete_duplicate_records()
     get_count_today()
     remove_old_records()
     conn.close()
