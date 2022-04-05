@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 url_collector = []
 db_urls = []
-counter = 999
+counter = 599
 
 user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
@@ -265,15 +265,27 @@ def remove_old_records():
         print('No records to delete')
 
 def delete_duplicate_records():
-    try:
-        cur.execute('''SELECT url,count(*) FROM ss_all_new GROUP BY url HAVING count(*) > 1''')
-        duplicates = cur.fetchall()
-        for duplicate in duplicates:
-            cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (duplicate[0],))
-            conn.commit()
-            print(f'{duplicate[0]} deleted')
-    except:
-        print('No duplicates to delete')
+    if counter % 120 == 0:
+        try:
+            cur.execute('''SELECT url,count(*) FROM ss_all_new GROUP BY url HAVING count(*) > 1''')
+            duplicates = cur.fetchall()
+            for duplicate in duplicates:
+                cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (duplicate[0],))
+                conn.commit()
+                print(f'{duplicate[0]} deleted')
+        except:
+            print('No duplicates to delete')
+    else:
+        try:
+            today_date = datetime.now().strftime('%Y-%m-%d')
+            cur.execute('''SELECT url,count(*) FROM ss_all_new GROUP BY url HAVING count(*) > 1 WHERE date_added = ?''', (today_date,))
+            duplicates = cur.fetchall()
+            for duplicate in duplicates:
+                cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (duplicate[0],))
+                conn.commit()
+                print(f'{duplicate[0]} deleted')
+        except:
+            print('No duplicates to delete')
 
 def get_count_today():
     try:
@@ -284,22 +296,29 @@ def get_count_today():
     except:
         print('No records for today')
 
+
 while True:
+    conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
+    cur = conn.cursor()
     create_db()
     fetch_all_db()
 
-    if counter % 1000 == 0:
+    if counter % 600 == 0:
         running_update(100)
-        delete_duplicate_records()
-    elif counter % 100 == 0:
+    elif counter % 60 == 0:
         running_update(20)
-        delete_duplicate_records()
     else:
-        running_update(8)
-        delete_duplicate_records()
-    counter += 1
-    get_count_today()
-    print(f"Counter is at {counter}")
+        running_update(6)
+    
     db_urls = []
+    counter += 1
+    
+    delete_duplicate_records()
+    get_count_today()
     remove_old_records()
+    conn.close()
+    
+    print(f"Counter is at {counter}")
+    print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    
     time.sleep(60)
