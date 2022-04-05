@@ -11,4 +11,4 @@ Then compares the results to links already in the db. If a link is new it parses
 
 !!!Before running be sure to cd into "scrapers" folder!
 
-First run will take a lot of time as it parses 17k flats. After that it only adds new listings.
+First run will take a lot of time as it parses 3-4k flats. After that it only adds new listings.
