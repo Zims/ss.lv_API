@@ -181,7 +181,7 @@ def running_update(page_count):
         for i in range(1,page_count):
             get_one_page(i)
             print('Page ' + str(i) + ' done')
-            time.sleep(0.15)
+            time.sleep(0.07)
 
         for url in url_collector:
             if url in db_urls:
@@ -190,14 +190,14 @@ def running_update(page_count):
                 print(url)
                 t = threading.Thread(target=detail_parser, args=(url,),)
                 t.start()
-                time.sleep(0.1)
+                time.sleep(0.07)
     except:
         print("Error")
 
 def remove_old_records():
     try:
-        # remove old records from db older than 300 days
-        cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-300 days')''')
+        # remove old records from db older than 10 days
+        cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-10 days')''')
         conn.commit()
         # remove broken records from db younger then a day
         cur.execute('''DELETE FROM ss_all_new WHERE date_added > date('now','+1 days')''')
@@ -245,7 +245,7 @@ while True:
     fetch_all_db()
 
     if counter % 600 == 0:
-        running_update(120)
+        running_update(80)
         delete_duplicate_records()
 
     elif counter % 60 == 0:
