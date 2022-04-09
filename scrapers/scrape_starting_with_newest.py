@@ -202,6 +202,13 @@ def remove_old_records():
         # remove broken records from db younger then a day
         cur.execute('''DELETE FROM ss_all_new WHERE date_added > date('now','+1 days')''')
         conn.commit()
+        # set time every day at 3 am
+
+        night_time = datetime.now().strftime('%H:%M')
+        if night_time == '03:00':
+            cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-1 days')''')
+            conn.commit()            
+
     except:
         print('No records to delete')
 
@@ -241,11 +248,13 @@ def get_count_today():
 while True:
     conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
     cur = conn.cursor()
+    time.sleep(0.5)
+    remove_old_records()
     create_db()
     fetch_all_db()
 
     if counter % 600 == 0:
-        running_update(80)
+        running_update(50)
         delete_duplicate_records()
 
     elif counter % 60 == 0:
@@ -253,14 +262,14 @@ while True:
         delete_duplicate_records()
 
     else:
-        running_update(6)
+        running_update(11)
     
     db_urls = []
     counter += 1
     
-    get_count_today()
     remove_old_records()
-    conn.close()
+    get_count_today()
+    # conn.close()
     
     print(f"Counter is at {counter}")
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
