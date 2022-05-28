@@ -10,7 +10,7 @@ from datetime import datetime
 app = FastAPI()
 
 # Database connection
-conn = sqlite3.connect('scrapers/ss_all.sqlite3', check_same_thread=False)
+conn = sqlite3.connect('ss_all_27.sqlite3', check_same_thread=False)
 c = conn.cursor()
 
 # queries
@@ -74,3 +74,4 @@ def get_place(place):
         c.execute("SELECT * FROM ss_all_new WHERE district = ? ORDER BY added_to_db DESC LIMIT 300", (place,))
         place_appartments = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
         return place_appartments
+
