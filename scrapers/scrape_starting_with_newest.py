@@ -24,7 +24,7 @@ user_agents = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
 ]
 
-conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
+conn = sqlite3.connect('../ss_all_27.sqlite3', check_same_thread=False)
 cur = conn.cursor()
 
 def get_one_page(page_nr):
@@ -185,9 +185,10 @@ def running_update(page_count):
 
         for url in url_collector:
             if url in db_urls:
-                print("Already in db")
+                # print("Already in db")
+                pass
             else:
-                print(url)
+                # print(url)
                 t = threading.Thread(target=detail_parser, args=(url,),)
                 t.start()
                 time.sleep(0.07)
@@ -246,7 +247,7 @@ def get_count_today():
 
 
 while True:
-    conn = sqlite3.connect('ss_all.sqlite3', check_same_thread=False)
+    conn = sqlite3.connect('../ss_all_27.sqlite3', check_same_thread=False)
     cur = conn.cursor()
     time.sleep(0.5)
     remove_old_records()
@@ -255,14 +256,17 @@ while True:
 
     if counter % 600 == 0:
         running_update(50)
-        delete_duplicate_records()
 
-    elif counter % 60 == 0:
+    elif counter % 100 == 0:
         running_update(20)
-        delete_duplicate_records()
+
+    elif counter % 10 == 0:
+        running_update(11)
 
     else:
-        running_update(11)
+        running_update(4)
+        
+    delete_duplicate_records()
     
     db_urls = []
     counter += 1
@@ -274,4 +278,4 @@ while True:
     print(f"Counter is at {counter}")
     print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     
-    time.sleep(60)
+    time.sleep(30)
