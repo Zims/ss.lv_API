@@ -1,3 +1,4 @@
+from itertools import count
 import requests
 from lxml import etree
 import time
@@ -235,11 +236,22 @@ class Database:
         print('Todays records: ', todays_records[0][0])
 
 
+counter = 599
 while True:
     db = Database()
     db.remove_old_records()
     ad_scraper = AdScraper()
-    ad_scraper.scrape_single_page(ad_scraper.get_urls_from_site(range(1, 15)))
+
+    if counter % 600 == 0:
+        ad_scraper.scrape_single_page(ad_scraper.get_urls_from_site(range(0, 25)))
+    elif counter % 100 == 0:
+        ad_scraper.scrape_single_page(ad_scraper.get_urls_from_site(range(0, 15)))
+    elif counter % 10 == 0:
+        ad_scraper.scrape_single_page(ad_scraper.get_urls_from_site(range(0, 8)))
+    else:
+        ad_scraper.scrape_single_page(ad_scraper.get_urls_from_site(range(0, 4)))
+
+    counter += 1
     db.add_new_records(ad_scraper.detail_list)
     db.remove_old_records()
     time.sleep(30)
