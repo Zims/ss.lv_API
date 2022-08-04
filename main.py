@@ -6,11 +6,10 @@ from fastapi.staticfiles import StaticFiles
 from datetime import datetime
 
 
-
 app = FastAPI()
 
 # Database connection
-conn = sqlite3.connect('ss_all_with_class.sqlite3', check_same_thread=False)
+conn = sqlite3.connect('scrapers/ss_all_with_class.sqlite3', check_same_thread=False)
 c = conn.cursor()
 
 # queries
