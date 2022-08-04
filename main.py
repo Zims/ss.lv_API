@@ -37,8 +37,8 @@ async def today(request: Request):
     return todays_ads
 
 
-@app.get("/places")
-async def places(request: Request):
+@app.get("/districts")
+async def districts(request: Request):
     # return all places in database
     # only unique values for rajons
     c.execute("SELECT DISTINCT district FROM ss_all_new")
@@ -47,18 +47,18 @@ async def places(request: Request):
     return district
 
 
-@app.get("/{district}/{end_date}")
-async def district(request: Request, district: str, end_date: str):
-    district = district.replace('_', ' ')
-    end_date = end_date.replace('_', '-')
-    c.execute("SELECT * FROM ss_all_new WHERE district = ? AND date_added >= ? ORDER BY added_to_db DESC", (district, end_date))
-    # put them in a list
-    district_ads = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
-    return district_ads
+# @app.get("/{district}/{end_date}")
+# async def district(request: Request, district: str, end_date: str):
+#     district = district.replace('_', ' ')
+#     end_date = end_date.replace('_', '-')
+#     c.execute("SELECT * FROM ss_all_new WHERE district = ? AND date_added >= ? ORDER BY added_to_db DESC", (district, end_date))
+#     # put them in a list
+#     district_ads = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
+#     return district_ads
 
 
 @app.get("/{place:str}")
-def get_place(place):
+def get_district(place):
     if place == "top100":
         # select only top 100 newest records
         c.execute("SELECT * FROM ss_all_new ORDER BY added_to_db DESC LIMIT 100")
