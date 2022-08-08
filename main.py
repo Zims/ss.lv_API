@@ -57,9 +57,9 @@ async def districts(request: Request):
 #     return district_ads
 
 
-@app.get("/{place:str}")
-def get_district(place):
-    if place == "top100":
+@app.get("/{district:str}")
+def get_district(district):
+    if district == "top100":
         # select only top 100 newest records
         c.execute("SELECT * FROM ss_all_new ORDER BY added_to_db DESC LIMIT 100")
         top100 = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
@@ -70,6 +70,6 @@ def get_district(place):
     #     entire_db_resp = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
     #     return entire_db_resp
     else:
-        c.execute("SELECT * FROM ss_all_new WHERE district = ? ORDER BY added_to_db DESC LIMIT 300", (place,))
+        c.execute("SELECT * FROM ss_all_new WHERE district = ? ORDER BY added_to_db DESC LIMIT 300", (district,))
         place_appartments = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
         return place_appartments
