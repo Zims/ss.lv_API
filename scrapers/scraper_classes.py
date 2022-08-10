@@ -1,11 +1,3 @@
-from itertools import count
-import requests
-from lxml import etree
-import time
-from datetime import datetime
-import sqlite3
-import random
-from bs4 import BeautifulSoup
 import random
 import sqlite3
 import time
@@ -194,6 +186,17 @@ class Database:
             if night_time == '03:00':
                 self.cur.execute('''DELETE FROM ss_all_new WHERE date_added < date('now','-1 days')''')
                 self.conn.commit()
+        #     remove record if urls duplicated
+            self.cur.execute('''SELECT url FROM ss_all_new GROUP BY url HAVING COUNT(*) > 1''')
+            duplicated_urls = self.cur.fetchall()
+            for url in duplicated_urls:
+                self.cur.execute('''DELETE FROM ss_all_new WHERE url = ?''', (url[0],))
+                self.conn.commit()
+            if self.cur.rowcount > 0:
+                print('Removed {} duplicated records'.format(self.cur.rowcount))
+
+
+
         except:
             print('No records to delete')
         
@@ -204,7 +207,6 @@ class Database:
 
         # compare detail_list urls with db urls and add new records for urls that are not in db
         db_list = [db_url[0] for db_url in db_urls]
-
 
         for detail in detail_list:
             if detail['url'] not in db_list:
@@ -254,4 +256,5 @@ while True:
     counter += 1
     db.add_new_records(ad_scraper.detail_list)
     db.remove_old_records()
+
     time.sleep(30)
