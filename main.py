@@ -15,7 +15,7 @@ c = conn.cursor()
 # queries
 c.execute("SELECT * FROM ss_all_new ORDER BY id DESC")
 # get 20 newest records
-c.execute("SELECT * FROM ss_all_new ORDER BY id DESC LIMIT 50")
+c.execute("SELECT * FROM ss_all_new ORDER BY id DESC LIMIT 500")
 
 all_appartments = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
 
@@ -34,7 +34,8 @@ async def today(request: Request):
     c.execute("SELECT * FROM ss_all_new WHERE date_added = ? ORDER BY added_to_db DESC", (todays_date,))
     # put them in a list
     todays_ads = [dict(zip([key[0] for key in c.description], row)) for row in c.fetchall()]
-    return todays_ads
+    
+    return all_appartments
 
 
 @app.get("/districts")
